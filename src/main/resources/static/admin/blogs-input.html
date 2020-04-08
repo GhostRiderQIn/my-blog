@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客新增</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <link rel="stylesheet" href="../lib/editormd/css/editormd.min.css">
     <link rel="stylesheet" href="../css/me.css">
 </head>
 <body>
@@ -65,7 +66,21 @@
                 </div>
 
                 <div class="field">
-                    <textarea placeholder="博客内容" name="content"></textarea>
+                    <div id="md-content" style="z-index: 1 !important;">
+
+                        <textarea placeholder="博客内容" name="content" style="display: none;">
+                            [TOC]
+
+#### Disabled options
+
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+                        </textarea>
+                    </div>
                 </div>
 
                 <div class="tow fields">
@@ -187,8 +202,20 @@
 </body>
 <script src="../js/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+<script src="../lib/editormd/editormd.min.js"></script>
 <script>
+    /*初始化markdown*/
+    var testEditor;
 
+    $(function() {
+        testEditor = editormd("md-content", {
+            width   : "100%",
+            height  : 640,
+            syncScrolling : "single",
+            path    : "../lib/editormd/lib/"
+        });
+
+    });
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     });
@@ -208,6 +235,22 @@
                 [{
                     type: 'empty',
                     prompt: '标题：请输入博客标题'
+                }]
+            },
+            fenlei:
+            {
+                identifier: 'type',
+                rules: [{
+                    type: 'empty',
+                    prompt: '分类：请选择分类'
+                }]
+            },
+            biaoqian:
+            {
+                identifier: 'tag',
+                rules: [{
+                    type: 'minCount[1]',
+                    prompt: '标签：请选择标签（至少选中一个）'
                 }]
             }
         }
