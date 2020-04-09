@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详情页</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-    <link rel="stylesheet" href="css/typo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="lib/prism/prism.css">
-    <link rel="stylesheet" href="lib/tocbot/tocbot.css">
-    <link rel="stylesheet" href="css/me.css">
+    <link rel="stylesheet" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
 
 </head>
 <body>
     <!--导航栏-->
-    <nav class="ui inverted attached segment m-padded-tb-mini">
+    <nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -443,12 +443,12 @@ h5,h6{font-size:1em;}
                     <div class="ui orange basic label">
                         <div class="ui images" style="font-size: inherit !important;">
                             <div class="image">
-                                <img src="images/my_wx_image.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                                <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded bordered image" style="width: 120px;">
                                 <div>支付宝</div>
                             </div>
 
                             <div class="image">
-                                <img src="images/my_wx_image.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                                <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded bordered image" style="width: 120px;">
                                 <div>微信</div>
                             </div>
 
@@ -468,7 +468,7 @@ h5,h6{font-size:1em;}
                         </ul>
                     </div>
                     <div class="five wide column">
-                        <img src="images/my_wx_image.png" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                        <img th:src="@{/images/my_wx_image.png}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
                     </div>
                 </div>
             </div>
@@ -580,13 +580,15 @@ h5,h6{font-size:1em;}
     <!--工具条-->
     <div class="m-padded-big m-fixed m-right-bottom">
         <div class="ui vertical icon buttons ">
-            <button type="button" href="" class="ui teal toc button">目录</button>
-            <a href="#comment-container" class="ui teal button">留言</a>
-            <button class="ui icon button"><i class="weixin icon"></i></button>
-            <a href="#" class="ui button"><i class="chevron up icon"></i></a>
+            <button type="button" class="ui teal toc button">目录</button>
+            <div id="toComment-button" class="ui teal button">留言</div>
+            <button class="ui weixin icon button"><i class="weixin icon"></i></button>
+            <div id="toTop-button" class="ui button"><i class="chevron up icon"></i></div>
         </div>
     </div>
-
+    <div id="qrcode" class="ui weixinQ m-padded-mini flowing popup transition hidden" style="width: 130px;">
+<!--        <img src="images/my_wx_image.png" style="width: 120px;" alt="" class="ui rounded image">-->
+    </div>
     <div class="ui toc-container flowing popup transition hidden" style="width: 240px">
         <ol class="js-toc">
 
@@ -594,13 +596,13 @@ h5,h6{font-size:1em;}
     </div>
 
 <!--    底部-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="images/my_wx_image.png" alt="" class="ui rounded image" style="width: 110px">
+                            <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded image" style="width: 110px">
                         </div>
                     </div>
                 </div>
@@ -630,12 +632,21 @@ h5,h6{font-size:1em;}
         </div>
     </footer>
 </body>
-<script src="js/jquery-3.4.1.js"></script>
-<script src="lib/prism/prism.js"></script>
-<script src="lib/tocbot/tocbot.min.js"></script>
+<script th:src="@{/js/jquery-3.4.1.js}"></script>
+<script th:src="@{/lib/prism/prism.js}"></script>
+<script th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+<script th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
 <script>
-
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: "http://jindo.dev.naver.com/collie",
+        width: 120,
+        height: 120,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     });
@@ -662,5 +673,18 @@ h5,h6{font-size:1em;}
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
     });
+
+    $('.ui.weixin').popup({
+        popup: $('.ui.weixinQ'),
+        position: 'left center'
+    });
+
+    $('#toTop-button').click(function () {
+        $(window).scrollTo(0,500);
+    })
+
+    $('#toComment-button').click(function () {
+        $(window).scrollTo($("#comment-container").offset().top,500);
+    })
 </script>
 </html>

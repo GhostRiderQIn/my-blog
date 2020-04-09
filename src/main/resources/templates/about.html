@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-    <link rel="stylesheet" href="css/me.css">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
 </head>
 <body>
     <!--导航栏-->
-    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="ui weixinQ flowing popup transition hidden">
-                        <img src="images/my_wx_image.png" style="width: 120px;" alt="" class="ui rounded image">
+                        <img th:src="@{/images/my_wx_image.png}" style="width: 120px;" alt="" class="ui rounded image">
                     </div>
                 </div>
             </div>
@@ -81,13 +81,13 @@
     </div>
 
 <!--    底部-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="images/my_wx_image.png" alt="" class="ui rounded image" style="width: 110px">
+                            <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded image" style="width: 110px">
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
         </div>
     </footer>
 </body>
-<script src="js/jquery-3.4.1.js"></script>
+<script th:src="@{/js/jquery-3.4.1.js}"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
 <script>
 
