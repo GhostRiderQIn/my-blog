@@ -40,11 +40,11 @@ public class LogAspect
         logger.info("Request: {}",requestLog);
     }
 
-    @After("log()")
-    public void doAfter()
-    {
-        logger.info("-------after-----------");
-    }
+//    @After("log()")
+//    public void doAfter()
+//    {
+//        logger.info("-------after-----------");
+//    }
 
     @AfterReturning(returning = "result",pointcut = "log()")
     public void doAfterReturn(String result)

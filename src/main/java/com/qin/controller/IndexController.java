@@ -12,24 +12,13 @@ public class IndexController
     @GetMapping("/")
     public String index()
     {
-
-//        System.out.println(id+nname);
         return "index";
     }
 
     @GetMapping("/blog")
     public String blog()
     {
-
-//        System.out.println(id+nname);
         return "blog";
     }
 
-    @GetMapping("/404")
-    public String not()
-    {
-
-//        System.out.println(id+nname);
-        return "error/404";
-    }
 }
