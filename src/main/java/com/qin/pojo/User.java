@@ -3,7 +3,9 @@ package com.qin.pojo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: my-blog
@@ -24,4 +26,5 @@ public class User {
     private Date creatTime;//创建时间
     private Date updateTime;//更新时间
 
+    private List<Blog> users = new ArrayList<>();
 }

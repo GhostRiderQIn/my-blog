@@ -3,6 +3,9 @@ package com.qin.pojo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: my-blog
  * @description: 分类实体类
@@ -14,6 +17,10 @@ import lombok.NoArgsConstructor;
 public class Type {
     private Long id;  //主键
     private String name;    //分类名
+
+
+    private List<Blog> blogs = new ArrayList<Blog>();
+
 
     @Override
     public String toString() {

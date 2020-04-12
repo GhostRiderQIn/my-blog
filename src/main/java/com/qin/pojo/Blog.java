@@ -3,7 +3,9 @@ package com.qin.pojo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: my-blog
@@ -29,7 +31,13 @@ public class Blog {
     private Date updateTime;  //更新时间
 
     //对应关系
+    private Type type;
 
+    private List<Tag> tags = new ArrayList<Tag>();
+
+    private User user;
+
+    private List<Comment> comments = new ArrayList<>();
     @Override
     public String toString() {
         return "Blog{" +

@@ -2,8 +2,11 @@ package com.qin.pojo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.catalina.LifecycleState;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: my-blog
@@ -22,6 +25,12 @@ public class Comment
     private String content;//评论内容
     private String avatar;//图片地址或base64
     private Date creatTime;//评论时间
+
+    private Blog blog;
+
+    private List<Comment> replyComments = new ArrayList<>();
+
+    private Comment parentComment;
 
     @Override
     public String toString() {
