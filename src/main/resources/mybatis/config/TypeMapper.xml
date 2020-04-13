@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qin.mapper.TypeMapper">
+
+    <insert id="addType" parameterType="Type">
+        insert into t_type(name) values (#{name})
+    </insert>
+
+    <select id="getType" parameterType="java.lang.Long" resultType="Type">
+        select * from t_type where id = #{id}
+    </select>
+
+    <update id="updateType" parameterType="Type">
+        update t_type set name = #{type.name} where id = #{id};
+    </update>
+</mapper>
