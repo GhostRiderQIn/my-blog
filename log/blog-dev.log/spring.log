@@ -1,64 +1,109 @@
-2020-04-13 18:31:49.169  INFO 640 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 640 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 18:31:49.180 DEBUG 640 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 18:31:49.184  INFO 640 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 18:31:50.467  INFO 640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 18:31:50.484  INFO 640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 JDBC repository interfaces.
-2020-04-13 18:31:52.661  INFO 640 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 18:31:52.809  INFO 640 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 18:31:53.907  INFO 640 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 5.784 seconds (JVM running for 8.052)
-2020-04-13 18:31:54.278  INFO 640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 18:31:56.584  INFO 640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 18:31:56.595 DEBUG 640 --- [main] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:31:56.681 DEBUG 640 --- [main] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:31:56.840 DEBUG 640 --- [main] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:31:56.971  INFO 640 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 18:31:56.980  INFO 640 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 18:31:57.136  INFO 640 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 18:32:00.761  INFO 5628 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 5628 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 18:32:00.763 DEBUG 5628 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 18:32:00.763  INFO 5628 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 18:32:00.867  INFO 5628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-13 18:32:00.868  INFO 5628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-13 18:32:02.071  INFO 5628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 18:32:02.090  INFO 5628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JDBC repository interfaces.
-2020-04-13 18:32:02.978  INFO 5628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 18:32:02.988  INFO 5628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 18:32:02.989  INFO 5628 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 18:32:03.101  INFO 5628 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 18:32:03.101  INFO 5628 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2232 ms
-2020-04-13 18:32:03.676  INFO 5628 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 18:32:03.754  INFO 5628 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 18:32:04.293  INFO 5628 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 18:32:04.338  INFO 5628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 18:32:04.341  INFO 5628 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 4.248 seconds (JVM running for 6.378)
-2020-04-13 18:32:19.820  INFO 5628 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 18:32:19.820  INFO 5628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 18:32:19.835  INFO 5628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
-2020-04-13 18:32:19.858  INFO 5628 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.IndexController.index', args=[]}
-2020-04-13 18:32:19.863  INFO 5628 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : index
-2020-04-13 18:32:24.187  INFO 5628 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:32:24.197  INFO 5628 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:33:03.762  INFO 5628 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:33:03.762  INFO 5628 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:33:07.597  INFO 5628 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@4375afd0, {}]}
-2020-04-13 18:33:07.617  INFO 5628 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 18:33:08.067  INFO 5628 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 18:33:08.074 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:33:08.094 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:33:08.118 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:33:08.122  INFO 5628 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:34:30.490  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:34:30.491  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:35:49.165  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:35:49.166  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:36:41.961  INFO 5628 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:36:41.962  INFO 5628 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:37:17.588  INFO 5628 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@4375afd0, {}]}
-2020-04-13 18:37:17.592 DEBUG 5628 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:37:17.595 DEBUG 5628 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:37:17.599 DEBUG 5628 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:37:17.600  INFO 5628 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:42:06.600 ERROR 5628 --- [http-nio-8080-exec-10] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/login, Exception : {}
+2020-04-14 22:30:43.243  INFO 11496 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 11496 (started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:30:43.255 DEBUG 11496 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:30:43.255  INFO 11496 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
+2020-04-14 22:30:44.757  INFO 11496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:30:44.778  INFO 11496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:30:46.926  INFO 11496 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:30:47.068  INFO 11496 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:30:47.607  INFO 11496 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 5.078 seconds (JVM running for 7.35)
+2020-04-14 22:30:48.103  INFO 11496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:30:49.713  INFO 11496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:30:49.772  INFO 11496 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:30:49.772  INFO 11496 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 22:30:49.781  INFO 11496 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:34:01.735  INFO 14048 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 14048 (started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:34:01.737 DEBUG 14048 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:34:01.737  INFO 14048 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
+2020-04-14 22:34:02.774  INFO 14048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:34:02.792  INFO 14048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:34:04.505  INFO 14048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:34:04.669  INFO 14048 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:34:05.240  INFO 14048 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.278 seconds (JVM running for 5.854)
+2020-04-14 22:34:05.487  INFO 14048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:34:06.353  INFO 14048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:34:06.404  INFO 14048 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:34:06.406  INFO 14048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 22:34:06.413  INFO 14048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:34:38.331  INFO 6804 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 6804 (started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:34:38.333 DEBUG 6804 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:34:38.333  INFO 6804 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
+2020-04-14 22:34:39.790  INFO 6804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:34:39.811  INFO 6804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:34:42.287  INFO 6804 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:34:42.427  INFO 6804 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:34:43.210  INFO 6804 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 5.632 seconds (JVM running for 7.017)
+2020-04-14 22:34:43.442  INFO 6804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:34:44.456  INFO 6804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:34:44.669 DEBUG 6804 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 22:34:44.713 DEBUG 6804 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 22:34:44.848 DEBUG 6804 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 22:34:44.857 DEBUG 6804 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 22:34:44.858 DEBUG 6804 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 1(Integer)
+2020-04-14 22:34:44.863 DEBUG 6804 --- [main] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 1
+2020-04-14 22:34:44.887  INFO 6804 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:34:44.888  INFO 6804 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 22:34:44.898  INFO 6804 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:35:08.584  INFO 9088 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 9088 (started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:35:08.585 DEBUG 9088 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:35:08.585  INFO 9088 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
+2020-04-14 22:35:09.627  INFO 9088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:35:09.645  INFO 9088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:35:11.269  INFO 9088 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:35:11.406  INFO 9088 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:35:11.944  INFO 9088 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.004 seconds (JVM running for 5.188)
+2020-04-14 22:35:12.179  INFO 9088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:35:13.056  INFO 9088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:35:13.134 DEBUG 9088 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 22:35:13.163 DEBUG 9088 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 22:35:13.301 DEBUG 9088 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 22:35:13.308 DEBUG 9088 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 22:35:13.309 DEBUG 9088 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 1(Integer)
+2020-04-14 22:35:13.312 DEBUG 9088 --- [main] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 1
+2020-04-14 22:35:13.378  INFO 9088 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:35:13.382  INFO 9088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 22:35:13.406  INFO 9088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:35:35.590  INFO 13524 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 13524 (started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:35:35.592 DEBUG 13524 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:35:35.592  INFO 13524 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
+2020-04-14 22:35:36.684  INFO 13524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:35:36.701  INFO 13524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:35:38.315  INFO 13524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:35:38.454  INFO 13524 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:35:39.040  INFO 13524 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.162 seconds (JVM running for 5.307)
+2020-04-14 22:35:39.290  INFO 13524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:35:40.184  INFO 13524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:35:40.268 DEBUG 13524 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 22:35:40.323 DEBUG 13524 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 22:35:40.377 DEBUG 13524 --- [main] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 22:35:40.385 DEBUG 13524 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 22:35:40.399 DEBUG 13524 --- [main] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 22:35:40.406 DEBUG 13524 --- [main] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 22:35:40.481  INFO 13524 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:35:40.488  INFO 13524 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 22:35:40.504  INFO 13524 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:52:27.742  INFO 640 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 640 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
+2020-04-14 22:52:27.777 DEBUG 640 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 22:52:27.778  INFO 640 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
+2020-04-14 22:52:27.879  INFO 640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 22:52:27.879  INFO 640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 22:52:28.621  INFO 640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 22:52:28.636  INFO 640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 JDBC repository interfaces.
+2020-04-14 22:52:29.472  INFO 640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-14 22:52:29.481  INFO 640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-14 22:52:29.481  INFO 640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 22:52:29.602  INFO 640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-14 22:52:29.602  INFO 640 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1723 ms
+2020-04-14 22:52:30.241  INFO 640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:52:30.321  INFO 640 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:52:30.769  INFO 640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-14 22:52:30.816  INFO 640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 22:52:30.819  INFO 640 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 3.726 seconds (JVM running for 4.713)
+2020-04-14 22:52:40.178  INFO 640 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 22:52:40.179  INFO 640 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-14 22:52:40.190  INFO 640 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-04-14 22:52:40.250  INFO 640 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
+2020-04-14 22:52:40.255  INFO 640 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/login
+2020-04-14 22:53:14.139 ERROR 640 --- [http-nio-8080-exec-3] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/login, Exception : {}
 
 org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
 	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
@@ -109,53 +154,17 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
 
-2020-04-13 18:42:06.601  WARN 5628 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2020-04-13 18:42:30.733  INFO 5628 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:42:30.733  INFO 5628 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:42:40.311  INFO 5628 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@4375afd0, {}]}
-2020-04-13 18:42:40.314 DEBUG 5628 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:42:40.315 DEBUG 5628 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:42:40.316 DEBUG 5628 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:42:40.317  INFO 5628 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:43:09.846  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:43:09.847  INFO 5628 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:43:16.167  INFO 5628 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@4375afd0, {}]}
-2020-04-13 18:43:16.170 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:43:16.171 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:43:16.174 DEBUG 5628 --- [http-nio-8080-exec-5] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:43:16.176  INFO 5628 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:44:41.801  INFO 5372 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 5372 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 18:44:41.804 DEBUG 5372 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 18:44:41.805  INFO 5372 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 18:44:41.877  INFO 5372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-13 18:44:41.878  INFO 5372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-13 18:44:42.531  INFO 5372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 18:44:42.543  INFO 5372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 JDBC repository interfaces.
-2020-04-13 18:44:43.185  INFO 5372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 18:44:43.192  INFO 5372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 18:44:43.193  INFO 5372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 18:44:43.277  INFO 5372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 18:44:43.277  INFO 5372 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1399 ms
-2020-04-13 18:44:43.800  INFO 5372 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 18:44:43.867  INFO 5372 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 18:44:44.241  INFO 5372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 18:44:44.280  INFO 5372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 18:44:44.283  INFO 5372 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 2.92 seconds (JVM running for 3.706)
-2020-04-13 18:44:50.387  INFO 5372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 18:44:50.387  INFO 5372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 18:44:50.397  INFO 5372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2020-04-13 18:44:50.419  INFO 5372 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:44:50.423  INFO 5372 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:44:56.137  INFO 5372 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@1790f4f5, {}]}
-2020-04-13 18:44:56.157  INFO 5372 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 18:44:56.611  INFO 5372 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 18:44:56.618 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:44:56.640 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:44:56.665 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:44:56.668  INFO 5372 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:46:29.343 ERROR 5372 --- [http-nio-8080-exec-2] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/login, Exception : {}
+2020-04-14 22:53:14.141  WARN 640 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-04-14 22:53:36.715  INFO 640 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@762f41ee, {}]}
+2020-04-14 22:53:36.747  INFO 640 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 22:53:37.360  INFO 640 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 22:53:37.367 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
+2020-04-14 22:53:37.394 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), e10adc3949ba59ab(String)
+2020-04-14 22:53:37.692 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
+2020-04-14 22:53:37.697  INFO 640 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : return : admin/index
+2020-04-14 22:54:22.812 ERROR 640 --- [http-nio-8080-exec-5] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/types, Exception : {}
 
-org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
 	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
@@ -166,8 +175,8 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.31.jar:9.0.31]
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
@@ -204,571 +213,256 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
 
-2020-04-13 18:46:29.345  WARN 5372 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2020-04-13 18:46:33.706  INFO 5372 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:46:33.706  INFO 5372 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:46:39.190  INFO 5372 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@1790f4f5, {}]}
-2020-04-13 18:46:39.192 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:46:39.193 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:46:39.197 DEBUG 5372 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:46:39.198  INFO 5372 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:47:30.622  INFO 5372 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@1790f4f5, {}]}
-2020-04-13 18:47:30.625 DEBUG 5372 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:47:30.626 DEBUG 5372 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:47:30.629 DEBUG 5372 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:47:30.630  INFO 5372 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:48:49.531  INFO 5372 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@1790f4f5, {}]}
-2020-04-13 18:48:49.533 DEBUG 5372 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:48:49.533 DEBUG 5372 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:48:49.535 DEBUG 5372 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:48:49.535  INFO 5372 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:51:38.516  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 7696 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 18:51:38.519 DEBUG 7696 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 18:51:38.520  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 18:51:38.576  INFO 7696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-13 18:51:38.576  INFO 7696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-13 18:51:39.903  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 18:51:39.925  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JDBC repository interfaces.
-2020-04-13 18:51:40.943  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 18:51:40.957  INFO 7696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 18:51:40.957  INFO 7696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 18:51:41.089  INFO 7696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 18:51:41.089  INFO 7696 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2513 ms
-2020-04-13 18:51:41.922  INFO 7696 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 18:51:42.000  INFO 7696 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 18:51:42.429  INFO 7696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 18:51:42.476  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 18:51:42.480  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 4.558 seconds (JVM running for 5.919)
-2020-04-13 18:51:53.005  INFO 7696 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 18:51:53.006  INFO 7696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 18:51:53.020  INFO 7696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
-2020-04-13 18:51:53.052  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.IndexController.index', args=[]}
-2020-04-13 18:51:53.056  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : index
-2020-04-13 18:51:59.194  INFO 7696 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:51:59.201  INFO 7696 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:52:04.883  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@7f5fc732, {}]}
-2020-04-13 18:52:04.901  INFO 7696 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 18:52:05.343  INFO 7696 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 18:52:05.349 DEBUG 7696 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:52:05.370 DEBUG 7696 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:52:05.392 DEBUG 7696 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:52:05.396  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:53:05.400 ERROR 7696 --- [http-nio-8080-exec-3] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/login, Exception : {}
-
-org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
-
-2020-04-13 18:53:05.402  WARN 7696 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2020-04-13 18:53:07.144  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:53:07.145  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:53:11.868  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@7f5fc732, {}]}
-2020-04-13 18:53:11.871 DEBUG 7696 --- [http-nio-8080-exec-1] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:53:11.872 DEBUG 7696 --- [http-nio-8080-exec-1] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:53:11.875 DEBUG 7696 --- [http-nio-8080-exec-1] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:53:11.876  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:54:09.427  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:54:09.429  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:54:14.929  INFO 7696 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@7f5fc732, {}]}
-2020-04-13 18:54:14.930 DEBUG 7696 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:54:14.931 DEBUG 7696 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), 123456(String)
-2020-04-13 18:54:14.932 DEBUG 7696 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 18:54:14.933  INFO 7696 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 18:54:16.676  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/logout', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.logout', args=[org.apache.catalina.session.StandardSessionFacade@7f5fc732]}
-2020-04-13 18:54:16.677  INFO 7696 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : redirect:/admin
-2020-04-13 18:54:16.697  INFO 7696 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:54:16.697  INFO 7696 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:57:30.518  INFO 7696 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:57:30.519  INFO 7696 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 18:57:36.932  INFO 7696 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[dsa, ds, org.apache.catalina.session.StandardSessionFacade@7f5fc732, {}]}
-2020-04-13 18:57:36.936 DEBUG 7696 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 18:57:36.939 DEBUG 7696 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: dsa(String), ds(String)
-2020-04-13 18:57:36.941 DEBUG 7696 --- [http-nio-8080-exec-4] com.qin.mapper.UserMapper.checkUser      : <==      Total: 0
-2020-04-13 18:57:36.942  INFO 7696 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : return : redirect:/admin
-2020-04-13 18:57:37.057  INFO 7696 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 18:57:37.057  INFO 7696 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 19:00:18.124  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 19:00:18.125  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 19:00:21.188  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, s, org.apache.catalina.session.StandardSessionFacade@7f5fc732, {}]}
-2020-04-13 19:00:21.189 DEBUG 7696 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 19:00:21.190 DEBUG 7696 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), s(String)
-2020-04-13 19:00:21.191 DEBUG 7696 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : <==      Total: 0
-2020-04-13 19:00:21.191  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : redirect:/admin
-2020-04-13 19:00:21.206  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 19:00:21.207  INFO 7696 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 19:00:53.958  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 19:00:53.959  INFO 7696 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 21:04:53.619  INFO 7696 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:04:53.620  INFO 7696 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 21:04:53.628  INFO 7696 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 21:04:53.950  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 7696 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:04:53.951 DEBUG 7696 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:04:53.951  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:04:54.144  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:04:54.149  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:04:54.329  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:04:54.330  INFO 7696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:04:54.330  INFO 7696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:04:54.353  INFO 7696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:04:54.354  INFO 7696 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 399 ms
-2020-04-13 21:04:54.609  INFO 7696 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:04:54.646  INFO 7696 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:04:55.041  INFO 7696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 21:04:55.062  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 21:04:55.062  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 1.149 seconds (JVM running for 7998.502)
-2020-04-13 21:04:55.064  INFO 7696 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 21:06:42.603  INFO 7696 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:06:43.228  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 7696 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:06:43.228 DEBUG 7696 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:06:43.229  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:06:43.455  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:06:43.460  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:06:43.617  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:06:43.618  INFO 7696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:06:43.618  INFO 7696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:06:43.634  INFO 7696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:06:43.634  INFO 7696 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 403 ms
-2020-04-13 21:06:43.819  INFO 7696 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:06:43.849  INFO 7696 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:06:44.126  INFO 7696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 21:06:44.140  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 21:06:44.141  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 0.961 seconds (JVM running for 8107.58)
-2020-04-13 21:06:44.142  INFO 7696 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 21:22:28.511  INFO 7696 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:22:28.926  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 7696 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:22:28.926 DEBUG 7696 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:22:28.926  INFO 7696 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:22:29.117  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:22:29.125  INFO 7696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:22:29.328  INFO 7696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:22:29.329  INFO 7696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:22:29.329  INFO 7696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:22:29.352  INFO 7696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:22:29.354  INFO 7696 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 425 ms
-2020-04-13 21:22:29.579  INFO 7696 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:22:29.608  INFO 7696 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:22:32.051  INFO 9592 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 9592 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:22:32.054 DEBUG 9592 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:22:32.054  INFO 9592 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:22:32.098  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-13 21:22:32.099  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-13 21:22:32.738  INFO 9592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:22:32.751  INFO 9592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:22:33.466  INFO 9592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:22:33.473  INFO 9592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:22:33.474  INFO 9592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:22:33.544  INFO 9592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:22:33.545  INFO 9592 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1446 ms
-2020-04-13 21:22:34.064  INFO 9592 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:22:34.136  INFO 9592 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:22:34.512  INFO 9592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 21:22:34.552  INFO 9592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 21:22:34.555  INFO 9592 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 2.912 seconds (JVM running for 3.613)
-2020-04-13 21:22:44.843  INFO 9592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 21:22:44.843  INFO 9592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 21:22:44.854  INFO 9592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2020-04-13 21:22:44.875  INFO 9592 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 21:22:44.882  INFO 9592 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 21:22:49.074  INFO 9592 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.AdminBlogController.blogs', args=[]}
-2020-04-13 21:22:49.081  INFO 9592 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/blogs
-2020-04-13 21:26:58.056  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:26:58.059 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:26:58.059  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:26:58.098  INFO 2884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-13 21:26:58.099  INFO 2884 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-13 21:26:58.752  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:26:58.768  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:26:59.442  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:26:59.452  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:26:59.452  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:26:59.553  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:26:59.554  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1455 ms
-2020-04-13 21:27:00.147  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:27:00.219  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:27:00.642  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 21:27:00.688  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 21:27:00.691  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 3.078 seconds (JVM running for 3.796)
-2020-04-13 21:27:05.599  INFO 2884 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 21:27:05.599  INFO 2884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 21:27:05.607  INFO 2884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2020-04-13 21:27:05.636  INFO 2884 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 21:27:05.641  INFO 2884 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 21:27:35.838  INFO 2884 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:27:36.158  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 21:27:36.159 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 21:27:36.159  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 21:27:36.332  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 21:27:36.339  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 JDBC repository interfaces.
-2020-04-13 21:27:36.506  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 21:27:36.507  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 21:27:36.507  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 21:27:36.531  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 21:27:36.531  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 370 ms
-2020-04-13 21:27:36.835  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 21:27:36.875  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 21:27:37.239  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 21:27:37.255  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 21:27:37.256  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 1.128 seconds (JVM running for 40.361)
-2020-04-13 21:27:37.259  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 21:27:39.138  INFO 2884 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-13 21:27:39.139  INFO 2884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-13 21:27:39.150  INFO 2884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2020-04-13 21:27:39.159  INFO 2884 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 21:27:39.167  INFO 2884 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 21:27:42.327 ERROR 2884 --- [http-nio-8080-exec-9] c.q.handler.ControllerExceptionHandler   : Request URL : http://localhost:8080/admin/login, Exception : {}
-
-org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
-
-2020-04-13 21:27:42.331  WARN 2884 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2020-04-13 21:27:50.841  INFO 2884 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@6013db9d, {}]}
-2020-04-13 21:27:50.865  INFO 2884 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 21:27:51.326  INFO 2884 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 21:27:51.332 DEBUG 2884 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
-2020-04-13 21:27:51.351 DEBUG 2884 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), e10adc3949ba59ab(String)
-2020-04-13 21:27:51.373 DEBUG 2884 --- [http-nio-8080-exec-10] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
-2020-04-13 21:27:51.378  INFO 2884 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/index
-2020-04-13 21:27:55.175  INFO 2884 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.AdminBlogController.blogs', args=[]}
-2020-04-13 21:27:55.181  INFO 2884 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : return : admin/blogs
-2020-04-13 21:27:58.357  INFO 2884 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/logout', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.logout', args=[org.apache.catalina.session.StandardSessionFacade@6013db9d]}
-2020-04-13 21:27:58.358  INFO 2884 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : redirect:/admin
-2020-04-13 21:27:58.374  INFO 2884 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
-2020-04-13 21:27:58.374  INFO 2884 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : return : admin/login
-2020-04-13 22:13:21.845  INFO 2884 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:13:21.848  INFO 2884 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 22:13:21.863  INFO 2884 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 22:13:22.297  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:13:22.298 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:13:22.299  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:13:22.607  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:13:22.620  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:13:22.820  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:13:22.821  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:13:22.821  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:13:22.839  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:13:22.839  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 530 ms
-2020-04-13 22:13:23.072  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:13:23.103  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:13:23.395  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:13:23.410  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:13:23.411  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 1.163 seconds (JVM running for 2786.516)
-2020-04-13 22:13:23.412  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:13:25.791  INFO 8336 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 8336 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:13:25.794 DEBUG 8336 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:13:25.795  INFO 8336 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:13:27.090  INFO 8336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:13:27.107  INFO 8336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:13:29.009  INFO 8336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:13:29.161  INFO 8336 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:13:29.695  INFO 8336 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.647 seconds (JVM running for 5.859)
-2020-04-13 22:13:30.480  INFO 8336 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:14:33.724  INFO 2884 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:14:34.376  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:14:34.376 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:14:34.376  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:14:34.885  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:14:34.895  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:14:35.216  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:14:35.221  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:14:35.222  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:14:35.224  INFO 1344 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 1344 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:14:35.225 DEBUG 1344 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:14:35.225  INFO 1344 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:14:35.535  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:14:35.535  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1150 ms
-2020-04-13 22:14:36.435  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:14:36.482  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:14:36.672  INFO 1344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:14:36.700  INFO 1344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:14:36.874  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:14:36.896  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:14:36.897  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 2.643 seconds (JVM running for 2860.002)
-2020-04-13 22:14:36.899  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:14:38.544  INFO 1344 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:14:38.715  INFO 1344 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:14:39.311  INFO 1344 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 5.052 seconds (JVM running for 6.51)
-2020-04-13 22:14:39.570  INFO 1344 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:21:33.769  INFO 2884 --- [Thread-28] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:21:34.046  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:21:34.046 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:21:34.046  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:21:34.202  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:21:34.208  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:21:34.386  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:21:34.387  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:21:34.387  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:21:34.403  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:21:34.403  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 354 ms
-2020-04-13 22:21:34.634  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:21:34.679  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:21:34.979  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:21:34.992  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:21:34.992  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 0.981 seconds (JVM running for 3278.097)
-2020-04-13 22:21:34.993  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:21:37.972  INFO 2384 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 2384 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:21:37.975 DEBUG 2384 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:21:37.975  INFO 2384 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:21:39.357  INFO 2384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:21:39.378  INFO 2384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:21:41.357  INFO 2384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:21:41.496  INFO 2384 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:21:42.042  INFO 2384 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.846 seconds (JVM running for 6.408)
-2020-04-13 22:21:42.328  INFO 2384 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:23:45.549  INFO 2884 --- [Thread-33] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:23:46.028  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:23:46.028 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:23:46.028  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:23:46.421  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:23:46.447  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:23:46.751  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:23:46.751  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:23:46.752  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:23:46.779  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:23:46.779  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 748 ms
-2020-04-13 22:23:46.837  INFO 10632 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 10632 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:23:46.838 DEBUG 10632 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:23:46.839  INFO 10632 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:23:47.455  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:23:47.618  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:23:47.974  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:23:47.992  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:23:47.993  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 2.026 seconds (JVM running for 3411.097)
-2020-04-13 22:23:47.994  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:23:48.044  INFO 10632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:23:48.060  INFO 10632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:23:49.717  INFO 10632 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:23:49.867  INFO 10632 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:23:50.397  INFO 10632 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.377 seconds (JVM running for 5.688)
-2020-04-13 22:23:50.628  INFO 10632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 22:23:51.422  INFO 10632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 22:23:51.430 DEBUG 10632 --- [main] com.qin.mapper.TypeMapper.addType        : ==>  Preparing: insert into t_type(name) values (?) 
-2020-04-13 22:23:51.460 DEBUG 10632 --- [main] com.qin.mapper.TypeMapper.addType        : ==> Parameters: JAVA(String)
-2020-04-13 22:23:51.604 DEBUG 10632 --- [main] com.qin.mapper.TypeMapper.addType        : <==    Updates: 1
-2020-04-13 22:23:51.636  INFO 10632 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:23:51.639  INFO 10632 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 22:23:51.663  INFO 10632 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 22:28:50.605  INFO 2884 --- [Thread-38] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:28:50.930  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:28:50.931 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:28:50.931  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:28:51.067  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:28:51.072  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:28:51.194  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:28:51.195  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:28:51.195  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:28:51.209  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:28:51.209  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 277 ms
-2020-04-13 22:28:51.392  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:28:51.424  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:28:51.794  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:28:51.823  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:28:51.833  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 0.928 seconds (JVM running for 3714.937)
-2020-04-13 22:28:51.841  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:28:53.767  INFO 8324 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 8324 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:28:53.769 DEBUG 8324 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:28:53.769  INFO 8324 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:28:54.817  INFO 8324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:28:54.841  INFO 8324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:28:56.600  INFO 8324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:28:56.734  INFO 8324 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:28:57.287  INFO 8324 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.159 seconds (JVM running for 5.4)
-2020-04-13 22:28:57.518  INFO 8324 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:29:55.913  INFO 8724 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 8724 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:29:55.914 DEBUG 8724 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:29:55.915  INFO 8724 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:29:57.368  INFO 8724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:29:57.386  INFO 8724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:29:59.177  INFO 8724 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:29:59.324  INFO 8724 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:29:59.843  INFO 8724 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.45 seconds (JVM running for 5.882)
-2020-04-13 22:30:00.109  INFO 8724 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:31:05.897  INFO 2884 --- [Thread-43] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:31:06.496  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:31:06.496 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:31:06.496  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:31:06.908  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:31:06.914  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:31:07.051  INFO 8656 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 8656 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:31:07.067 DEBUG 8656 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:31:07.068  INFO 8656 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:31:07.475  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:31:07.480  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:31:07.495  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:31:07.667  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:31:07.668  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1168 ms
-2020-04-13 22:31:08.069  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:31:08.115  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:31:08.270  INFO 8656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:31:08.290  INFO 8656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:31:08.435  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:31:08.448  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:31:08.448  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 2.082 seconds (JVM running for 3851.553)
-2020-04-13 22:31:08.449  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:31:09.923  INFO 8656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:31:10.064  INFO 8656 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:31:10.680  INFO 8656 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.421 seconds (JVM running for 5.805)
-2020-04-13 22:31:10.940  INFO 8656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 22:31:11.737  INFO 8656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 22:31:11.746 DEBUG 8656 --- [main] com.qin.mapper.TypeMapper.getType        : ==>  Preparing: select * from t_type where id = ? 
-2020-04-13 22:31:11.776 DEBUG 8656 --- [main] com.qin.mapper.TypeMapper.getType        : ==> Parameters: 2(Long)
-2020-04-13 22:31:11.801 DEBUG 8656 --- [main] com.qin.mapper.TypeMapper.getType        : <==      Total: 1
-2020-04-13 22:31:11.826  INFO 8656 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:31:11.828  INFO 8656 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 22:31:11.832  INFO 8656 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 22:38:59.282  INFO 2884 --- [Thread-48] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:38:59.635  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:38:59.635 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:38:59.635  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:38:59.794  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:38:59.800  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:38:59.919  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:38:59.919  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:38:59.920  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:38:59.934  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:38:59.934  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 296 ms
-2020-04-13 22:39:00.111  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:00.140  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:39:00.472  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:39:00.499  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:39:00.500  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 0.896 seconds (JVM running for 4323.604)
-2020-04-13 22:39:00.501  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:39:02.735  INFO 6572 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 6572 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:39:02.737 DEBUG 6572 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:39:02.738  INFO 6572 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:39:03.936  INFO 6572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:39:03.953  INFO 6572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:39:05.649  INFO 6572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:05.789  INFO 6572 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:39:06.282  INFO 6572 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.284 seconds (JVM running for 5.55)
-2020-04-13 22:39:06.532  INFO 6572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 22:39:07.287  INFO 6572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 22:39:07.295 DEBUG 6572 --- [main] com.qin.mapper.TypeMapper.updateType     : ==>  Preparing: update t_type set name = ? where id = ?; 
-2020-04-13 22:39:07.330 DEBUG 6572 --- [main] com.qin.mapper.TypeMapper.updateType     : ==> Parameters: python(String), 2(Long)
-2020-04-13 22:39:07.564 DEBUG 6572 --- [main] com.qin.mapper.TypeMapper.updateType     : <==    Updates: 1
-2020-04-13 22:39:07.606  INFO 6572 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:07.624  INFO 6572 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 22:39:07.662  INFO 6572 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-04-13 22:39:42.535  INFO 2884 --- [Thread-53] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:42.921  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 2884 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:39:42.921 DEBUG 2884 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:39:42.921  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
-2020-04-13 22:39:43.203  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:39:43.210  INFO 2884 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:39:43.423  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-13 22:39:43.425  INFO 2884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-13 22:39:43.425  INFO 2884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-04-13 22:39:43.472  INFO 2884 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-13 22:39:43.472  INFO 2884 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 546 ms
-2020-04-13 22:39:43.848  INFO 2884 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:43.910  INFO 2884 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:39:44.513  INFO 14032 --- [main] com.qin.MyBlogApplicationTests           : Starting MyBlogApplicationTests on LAPTOP-J73SDI41 with PID 14032 (started by qin in D:\IdeaProject\my-blog)
-2020-04-13 22:39:44.514 DEBUG 14032 --- [main] com.qin.MyBlogApplicationTests           : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-04-13 22:39:44.514  INFO 14032 --- [main] com.qin.MyBlogApplicationTests           : The following profiles are active: dev
-2020-04-13 22:39:44.654  INFO 2884 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-13 22:39:44.671  INFO 2884 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-13 22:39:44.672  INFO 2884 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 1.791 seconds (JVM running for 4367.776)
-2020-04-13 22:39:44.673  INFO 2884 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-04-13 22:39:45.782  INFO 14032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2020-04-13 22:39:45.799  INFO 14032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JDBC repository interfaces.
-2020-04-13 22:39:47.425  INFO 14032 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:47.551  INFO 14032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-13 22:39:48.092  INFO 14032 --- [main] com.qin.MyBlogApplicationTests           : Started MyBlogApplicationTests in 4.25 seconds (JVM running for 5.647)
-2020-04-13 22:39:48.305  INFO 14032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-13 22:39:49.067  INFO 14032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-13 22:39:49.076 DEBUG 14032 --- [main] com.qin.mapper.TypeMapper.updateType     : ==>  Preparing: update t_type set name = ? where id = ?; 
-2020-04-13 22:39:49.109 DEBUG 14032 --- [main] com.qin.mapper.TypeMapper.updateType     : ==> Parameters: python(String), 2(Long)
-2020-04-13 22:39:49.233 DEBUG 14032 --- [main] com.qin.mapper.TypeMapper.updateType     : <==    Updates: 1
-2020-04-13 22:39:49.279  INFO 14032 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-13 22:39:49.283  INFO 14032 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 22:39:49.301  INFO 14032 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-14 22:54:22.817  WARN 640 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-04-14 22:54:34.584  INFO 640 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@648ad0bf, {pageRequest=com.qin.pojo.PageRequest@648ad0bf, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 22:54:34.653 DEBUG 640 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 22:54:34.654 DEBUG 640 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 22:54:34.655 DEBUG 640 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 22:54:34.657 DEBUG 640 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 22:54:34.657 DEBUG 640 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 22:54:34.660 DEBUG 640 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 22:54:34.665  INFO 640 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:00:10.636  INFO 640 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.IndexController.index', args=[]}
+2020-04-14 23:00:10.638  INFO 640 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : index
+2020-04-14 23:00:14.707  INFO 640 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
+2020-04-14 23:00:14.707  INFO 640 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/login
+2020-04-14 23:00:19.374  INFO 640 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@371bbb4, {}]}
+2020-04-14 23:00:19.476 DEBUG 640 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
+2020-04-14 23:00:19.477 DEBUG 640 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), e10adc3949ba59ab(String)
+2020-04-14 23:00:19.479 DEBUG 640 --- [http-nio-8080-exec-7] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
+2020-04-14 23:00:19.479  INFO 640 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/index
+2020-04-14 23:00:48.985  INFO 640 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@586d3a91, {pageRequest=com.qin.pojo.PageRequest@586d3a91, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:00:48.988 DEBUG 640 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:00:48.991 DEBUG 640 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:00:48.994 DEBUG 640 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:00:48.995 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:00:48.995 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:00:48.999 DEBUG 640 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:00:49.000  INFO 640 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:00:57.468  INFO 640 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@6f63d2f8, {pageRequest=com.qin.pojo.PageRequest@6f63d2f8, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:00:57.470 DEBUG 640 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:00:57.472 DEBUG 640 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:00:57.475 DEBUG 640 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:00:57.475 DEBUG 640 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:00:57.475 DEBUG 640 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:00:57.478 DEBUG 640 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:00:57.480  INFO 640 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:01:08.818  INFO 640 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@58c4b6fe, {pageRequest=com.qin.pojo.PageRequest@58c4b6fe, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:01:08.820 DEBUG 640 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:01:08.821 DEBUG 640 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:01:08.822 DEBUG 640 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:01:08.822 DEBUG 640 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:01:08.822 DEBUG 640 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:01:08.824 DEBUG 640 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:01:08.826  INFO 640 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:02:00.589  INFO 640 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@230b49b8, {pageRequest=com.qin.pojo.PageRequest@230b49b8, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:02:00.595 DEBUG 640 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:02:00.596 DEBUG 640 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:02:00.597 DEBUG 640 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:02:00.597 DEBUG 640 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:02:00.598 DEBUG 640 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:02:00.599 DEBUG 640 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:02:00.601  INFO 640 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:14:47.423  INFO 5608 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 5608 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
+2020-04-14 23:14:47.427 DEBUG 5608 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 23:14:47.428  INFO 5608 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
+2020-04-14 23:14:47.481  INFO 5608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 23:14:47.493  INFO 5608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 23:14:48.576  INFO 5608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 23:14:48.599  INFO 5608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 JDBC repository interfaces.
+2020-04-14 23:14:49.778  INFO 5608 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-14 23:14:49.790  INFO 5608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-14 23:14:49.791  INFO 5608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 23:14:49.929  INFO 5608 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-14 23:14:49.929  INFO 5608 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2436 ms
+2020-04-14 23:14:50.905  INFO 5608 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 23:14:51.012  INFO 5608 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 23:14:51.493  INFO 5608 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-14 23:14:51.542  INFO 5608 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 23:14:51.546  INFO 5608 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 4.885 seconds (JVM running for 6.431)
+2020-04-14 23:14:55.413  INFO 5608 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 23:14:55.413  INFO 5608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-14 23:14:55.426  INFO 5608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-04-14 23:14:55.450  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.IndexController.index', args=[]}
+2020-04-14 23:14:55.454  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : index
+2020-04-14 23:14:59.675  INFO 5608 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
+2020-04-14 23:14:59.683  INFO 5608 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/login
+2020-04-14 23:15:08.597  INFO 5608 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@47ddcdf2, {}]}
+2020-04-14 23:15:08.622  INFO 5608 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 23:15:09.123  INFO 5608 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 23:15:09.130 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
+2020-04-14 23:15:09.149 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), e10adc3949ba59ab(String)
+2020-04-14 23:15:09.167 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
+2020-04-14 23:15:09.171  INFO 5608 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/index
+2020-04-14 23:15:17.949  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@7bb1c478, {pageRequest=com.qin.pojo.PageRequest@7bb1c478, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:17.992 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:17.993 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:17.994 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:17.995 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:15:17.996 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:15:17.999 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:18.002  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:22.711  INFO 5608 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@797d4fce, {pageRequest=com.qin.pojo.PageRequest@797d4fce, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:22.717 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:22.718 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:22.722 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:22.723 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:15:22.723 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 1(Integer)
+2020-04-14 23:15:22.724 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 1
+2020-04-14 23:15:22.726  INFO 5608 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:25.889  INFO 5608 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@5c9b291f, {pageRequest=com.qin.pojo.PageRequest@5c9b291f, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:25.893 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:25.893 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:25.897 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:25.897 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:15:25.898 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:15:25.900 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:25.903  INFO 5608 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:27.849  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@520c7c3e, {pageRequest=com.qin.pojo.PageRequest@520c7c3e, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:27.852 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:27.852 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:27.854 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:27.854 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:15:27.854 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:15:27.856 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:27.858  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:29.704  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@132deea0, {pageRequest=com.qin.pojo.PageRequest@132deea0, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:29.706 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:29.706 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:29.709 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:29.711 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type LIMIT ? 
+2020-04-14 23:15:29.713 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 2(Integer)
+2020-04-14 23:15:29.714 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:29.716  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:31.943  INFO 5608 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@32d4d664, {pageRequest=com.qin.pojo.PageRequest@32d4d664, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:31.948 DEBUG 5608 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:31.948 DEBUG 5608 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:31.952 DEBUG 5608 --- [http-nio-8080-exec-4] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:31.952 DEBUG 5608 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:31.952 DEBUG 5608 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:31.954 DEBUG 5608 --- [http-nio-8080-exec-4] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:31.955  INFO 5608 --- [http-nio-8080-exec-4] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:32.876  INFO 5608 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@13913c2d, {pageRequest=com.qin.pojo.PageRequest@13913c2d, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:32.879 DEBUG 5608 --- [http-nio-8080-exec-7] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:32.881 DEBUG 5608 --- [http-nio-8080-exec-7] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:32.885 DEBUG 5608 --- [http-nio-8080-exec-7] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:32.886 DEBUG 5608 --- [http-nio-8080-exec-7] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:32.886 DEBUG 5608 --- [http-nio-8080-exec-7] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:32.887 DEBUG 5608 --- [http-nio-8080-exec-7] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:32.888  INFO 5608 --- [http-nio-8080-exec-7] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:33.616  INFO 5608 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@6b8c8313, {pageRequest=com.qin.pojo.PageRequest@6b8c8313, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:33.620 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:33.621 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:33.623 DEBUG 5608 --- [http-nio-8080-exec-5] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:33.624 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:33.625 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:33.626 DEBUG 5608 --- [http-nio-8080-exec-5] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:33.627  INFO 5608 --- [http-nio-8080-exec-5] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:34.198  INFO 5608 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@44f01fc, {pageRequest=com.qin.pojo.PageRequest@44f01fc, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:34.200 DEBUG 5608 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:34.200 DEBUG 5608 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:34.202 DEBUG 5608 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:34.204 DEBUG 5608 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:34.205 DEBUG 5608 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:34.206 DEBUG 5608 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:34.208  INFO 5608 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:34.490  INFO 5608 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@324d733a, {pageRequest=com.qin.pojo.PageRequest@324d733a, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:34.491 DEBUG 5608 --- [http-nio-8080-exec-3] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:34.492 DEBUG 5608 --- [http-nio-8080-exec-3] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:34.493 DEBUG 5608 --- [http-nio-8080-exec-3] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:34.493 DEBUG 5608 --- [http-nio-8080-exec-3] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:34.494 DEBUG 5608 --- [http-nio-8080-exec-3] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:34.495 DEBUG 5608 --- [http-nio-8080-exec-3] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:34.496  INFO 5608 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:35.420  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@abe8143, {pageRequest=com.qin.pojo.PageRequest@abe8143, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:35.425 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:35.425 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:35.426 DEBUG 5608 --- [http-nio-8080-exec-1] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:35.427 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:35.427 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:35.428 DEBUG 5608 --- [http-nio-8080-exec-1] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:35.430  INFO 5608 --- [http-nio-8080-exec-1] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:35.716  INFO 5608 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@16e3f380, {pageRequest=com.qin.pojo.PageRequest@16e3f380, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:35.717 DEBUG 5608 --- [http-nio-8080-exec-8] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:35.717 DEBUG 5608 --- [http-nio-8080-exec-8] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:35.718 DEBUG 5608 --- [http-nio-8080-exec-8] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:35.720 DEBUG 5608 --- [http-nio-8080-exec-8] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:35.722 DEBUG 5608 --- [http-nio-8080-exec-8] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:35.722 DEBUG 5608 --- [http-nio-8080-exec-8] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:35.723  INFO 5608 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:35.949  INFO 5608 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@77aad0fd, {pageRequest=com.qin.pojo.PageRequest@77aad0fd, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:35.952 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:35.952 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:35.953 DEBUG 5608 --- [http-nio-8080-exec-2] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:35.954 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:35.954 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:35.955 DEBUG 5608 --- [http-nio-8080-exec-2] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:35.957  INFO 5608 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:39.796  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@30910941, {pageRequest=com.qin.pojo.PageRequest@30910941, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:39.799 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:39.800 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:39.803 DEBUG 5608 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:39.803 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:39.804 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:39.804 DEBUG 5608 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:39.806  INFO 5608 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:15:40.455  INFO 5608 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@3141c5a3, {pageRequest=com.qin.pojo.PageRequest@3141c5a3, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:15:40.457 DEBUG 5608 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:15:40.458 DEBUG 5608 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:15:40.458 DEBUG 5608 --- [http-nio-8080-exec-9] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:15:40.459 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:15:40.459 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:15:40.460 DEBUG 5608 --- [http-nio-8080-exec-9] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:15:40.461  INFO 5608 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:20:20.541  INFO 11788 --- [restartedMain] com.qin.MyBlogApplication                : Starting MyBlogApplication on LAPTOP-J73SDI41 with PID 11788 (D:\IdeaProject\my-blog\target\classes started by qin in D:\IdeaProject\my-blog)
+2020-04-14 23:20:20.544 DEBUG 11788 --- [restartedMain] com.qin.MyBlogApplication                : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 23:20:20.544  INFO 11788 --- [restartedMain] com.qin.MyBlogApplication                : The following profiles are active: dev
+2020-04-14 23:20:20.608  INFO 11788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 23:20:20.609  INFO 11788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 23:20:21.967  INFO 11788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-04-14 23:20:21.990  INFO 11788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JDBC repository interfaces.
+2020-04-14 23:20:23.026  INFO 11788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-14 23:20:23.041  INFO 11788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-14 23:20:23.042  INFO 11788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 23:20:23.178  INFO 11788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-14 23:20:23.178  INFO 11788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2569 ms
+2020-04-14 23:20:23.908  INFO 11788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 23:20:23.983  INFO 11788 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 23:20:24.520  INFO 11788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-14 23:20:24.567  INFO 11788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 23:20:24.572  INFO 11788 --- [restartedMain] com.qin.MyBlogApplication                : Started MyBlogApplication in 4.693 seconds (JVM running for 6.143)
+2020-04-14 23:24:41.549  INFO 11788 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 23:24:41.549  INFO 11788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-14 23:24:41.568  INFO 11788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-04-14 23:24:41.593  INFO 11788 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.IndexController.index', args=[]}
+2020-04-14 23:24:41.596  INFO 11788 --- [http-nio-8080-exec-2] com.qin.aspect.LogAspect                 : return : index
+2020-04-14 23:24:47.880  INFO 11788 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.toLoginPage', args=[]}
+2020-04-14 23:24:47.889  INFO 11788 --- [http-nio-8080-exec-9] com.qin.aspect.LogAspect                 : return : admin/login
+2020-04-14 23:24:52.545  INFO 11788 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.adminController.login', args=[admin, 123456, org.apache.catalina.session.StandardSessionFacade@21568219, {}]}
+2020-04-14 23:24:52.576  INFO 11788 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-14 23:24:53.136  INFO 11788 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-14 23:24:53.141 DEBUG 11788 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==>  Preparing: select * from t_user where username = ? and password = ? 
+2020-04-14 23:24:53.163 DEBUG 11788 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : ==> Parameters: admin(String), e10adc3949ba59ab(String)
+2020-04-14 23:24:53.190 DEBUG 11788 --- [http-nio-8080-exec-8] com.qin.mapper.UserMapper.checkUser      : <==      Total: 1
+2020-04-14 23:24:53.195  INFO 11788 --- [http-nio-8080-exec-8] com.qin.aspect.LogAspect                 : return : admin/index
+2020-04-14 23:24:54.353  INFO 11788 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@32a3e1a3, {pageRequest=com.qin.pojo.PageRequest@32a3e1a3, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:24:54.387 DEBUG 11788 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:24:54.388 DEBUG 11788 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:24:54.390 DEBUG 11788 --- [http-nio-8080-exec-6] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:24:54.391 DEBUG 11788 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:24:54.391 DEBUG 11788 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:24:54.392 DEBUG 11788 --- [http-nio-8080-exec-6] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:24:54.395  INFO 11788 --- [http-nio-8080-exec-6] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:24:56.805  INFO 11788 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.AdminBlogController.blogs', args=[]}
+2020-04-14 23:24:56.811  INFO 11788 --- [http-nio-8080-exec-3] com.qin.aspect.LogAspect                 : return : admin/blogs
+2020-04-14 23:24:58.078  INFO 11788 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : Request: RequestLog{url='http://localhost:8080/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.qin.controller.TypeController.list', args=[com.qin.pojo.PageRequest@536f9a50, {pageRequest=com.qin.pojo.PageRequest@536f9a50, org.springframework.validation.BindingResult.pageRequest=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]}
+2020-04-14 23:24:58.081 DEBUG 11788 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-04-14 23:24:58.082 DEBUG 11788 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : ==> Parameters: 
+2020-04-14 23:24:58.085 DEBUG 11788 --- [http-nio-8080-exec-10] c.q.mapper.TypeMapper.selectPage_COUNT   : <==      Total: 1
+2020-04-14 23:24:58.086 DEBUG 11788 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : ==>  Preparing: select * from t_type 
+2020-04-14 23:24:58.086 DEBUG 11788 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : ==> Parameters: 
+2020-04-14 23:24:58.087 DEBUG 11788 --- [http-nio-8080-exec-10] com.qin.mapper.TypeMapper.selectPage     : <==      Total: 2
+2020-04-14 23:24:58.088  INFO 11788 --- [http-nio-8080-exec-10] com.qin.aspect.LogAspect                 : return : admin/types
+2020-04-14 23:26:06.711  INFO 11788 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 23:26:06.712  INFO 11788 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-14 23:26:06.726  INFO 11788 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

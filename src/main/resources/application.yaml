@@ -7,3 +7,9 @@ spring:
 mybatis:
   type-aliases-package: com.qin.pojo
   mapper-locations: classpath:mybatis/config/*.xml
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

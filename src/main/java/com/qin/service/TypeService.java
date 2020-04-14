@@ -1,17 +1,16 @@
 package com.qin.service;
 
+import com.qin.pojo.PageRequest;
+import com.qin.pojo.PageResult;
 import com.qin.pojo.Type;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 public interface TypeService {
-    void addType(Type type);
+    int addType(Type type);
 
     Type getType(Long id);
 
-    Page<Type> listType(Pageable pageable);
+    PageResult listType(PageRequest pageRequest);
 
-    Type updateType(Long id, Type type);
+    int updateType(Long id, Type type);
 
-    void delType(Long id);
+    int delType(Long id);
 }

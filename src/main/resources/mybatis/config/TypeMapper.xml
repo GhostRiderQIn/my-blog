@@ -15,4 +15,8 @@
     <update id="updateType" parameterType="Type">
         update t_type set name = #{type.name} where id = #{id};
     </update>
+
+    <select id="selectPage"  resultType="Type">
+        select * from t_type
+    </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.qin;
 
+import com.qin.pojo.PageRequest;
 import com.qin.pojo.Type;
 import com.qin.service.TypeService;
 import com.qin.service.UserService;
@@ -19,9 +20,7 @@ class MyBlogApplicationTests
 	@Test
 	void contextLoads()
 	{
-		Type type = new Type();
-		type.setName("python");
-		System.out.println(typeService.updateType(2l,type));
+		System.out.println(typeService.listType(new PageRequest(1, 2)).getContent());
 	}
 
 }

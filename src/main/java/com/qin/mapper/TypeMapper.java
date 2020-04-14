@@ -7,17 +7,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Mapper
 @Repository
 public interface TypeMapper {
-    void addType(Type type);
+    int addType(Type type);
 
     Type getType(@Param("id") Long id);
 
-    Page<Type> listType(Pageable pageable);
+    List<Type> selectPage();
 
-    void updateType(@Param("id") Long id,@Param("type") Type type);
+    int updateType(@Param("id") Long id,@Param("type") Type type);
 
-    void delType(Long id);
+    int delType(Long id);
 }

@@ -56,12 +56,12 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>hdsahdsa</td>
+                    <tr th:each="type,iterStat : ${page.getContent()}">
+                        <td th:text="${iterStat.count}">1</td>
+                        <td th:text="${type.name}">hdsahdsa</td>
                         <td>
-                            <a href="#" class="ui mini teal basic button">编辑</a>
-                            <a href="#" class="ui mini red basic button">删除</a>
+                            <a href="#" th:href="@{/admin/types/{id}/input(${type.id})}" class="ui mini teal basic button">编辑</a>
+                            <a href="#" th:href="@{/admin/types/{id}/delet(${type.id})}" class="ui mini red basic button">删除</a>
                         </td>
                     </tr>
                 </tbody>
@@ -69,10 +69,10 @@
                     <tr>
                         <th colspan="6">
                             <div class="ui pagination menu">
-                                <a class="icon item">上一页</a>
-                                <a class="icon item">下一页</a>
+                                <a th:href="@{/admin/types(pageNum=${page.getPageNum()-1},pageSize=10)}" class="icon item">上一页</a>
+                                <a th:href="@{/admin/types(pageNum=${page.getPageNum()+1},pageSize=10)}" class="icon item">下一页</a>
                             </div>
-                            <a href="#" class="ui mini right floated teal basic button">新增</a>
+                            <a th:href="@{/admin/types/input}" href="#" class="ui mini right floated teal basic button">新增</a>
                         </th>
                     </tr>
                 </tfoot>
@@ -88,7 +88,7 @@
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="../../static/images/my_wx_image.png" alt="" class="ui rounded image" style="width: 110px">
+                            <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded image" style="width: 110px">
                         </div>
                     </div>
                 </div>
