@@ -19,4 +19,12 @@
     <select id="selectPage"  resultType="Type">
         select * from t_type
     </select>
+
+    <select id="getTypeByName"  resultType="Type">
+        select * from t_type where name = #{name}
+    </select>
+
+    <delete id="delType" parameterType="java.lang.Long">
+        delete from t_type where id=#{id}
+    </delete>
 </mapper>

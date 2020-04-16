@@ -30,6 +30,8 @@ public class Blog {
     private Date creatTime; //创建时间
     private Date updateTime;  //更新时间
 
+    private Long typeId;
+    private Long userId;
     //对应关系
     private Type type;
 

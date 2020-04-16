@@ -1,9 +1,9 @@
 package com.qin.controller;
 
-import com.qin.pojo.PageRequest;
-import com.qin.pojo.Type;
-import com.qin.service.TypeService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import javax.validation.Valid;
+
+import com.qin.pojo.Tag;
+import com.qin.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
-import java.util.List;
+import com.qin.pojo.PageRequest;
+import com.qin.pojo.Type;
+import com.qin.service.TypeService;
 
 /**
  * @program: my-blog
@@ -26,12 +26,12 @@ import java.util.List;
  **/
 @Controller
 @RequestMapping("/admin")
-public class TypeController
+public class TagController
 {
     @Autowired
-    private TypeService typeService;
+    private TagService tagService;
 
-    @GetMapping("/types")
+    @GetMapping("/tags")
     public String list(PageRequest pageRequest, Model model)
     {
         if(pageRequest.getPageNum() == 0 && pageRequest.getPageSize() == 0)
@@ -40,45 +40,45 @@ public class TypeController
             pageRequest.setPageNum(1);
             pageRequest.setPageSize(10);
         }
-        model.addAttribute("page",typeService.listType(pageRequest));
-        return "admin/types";
+        model.addAttribute("page",tagService.listTag(pageRequest));
+        return "admin/tags";
     }
 
-    @RequestMapping("/types/input")
-    public String toAddType(Model model)
+    @RequestMapping("/tags/input")
+    public String toAddTag(Model model)
     {
-        model.addAttribute("type",new Type());
-        return "admin/types-input";
+        model.addAttribute("tag",new Tag());
+        return "admin/tags-input";
     }
 
-    @RequestMapping("/types/{id}/input")
-    public String toUpdateType(@PathVariable Long id, Model model)
+    @RequestMapping("/tags/{id}/input")
+    public String toUpdateTag(@PathVariable Long id, Model model)
     {
-        Type type = typeService.getType(id);
-        model.addAttribute("type",type);
-        return "admin/types-input";
+        Tag tag = tagService.getTag(id);
+        model.addAttribute("tag",tag);
+        return "admin/tags-input";
     }
 
-    @RequestMapping("/types/{id}/delete")
-    public String deleteType(@PathVariable Long id,RedirectAttributes attributes)
+    @RequestMapping("/tags/{id}/delete")
+    public String deleteTag(@PathVariable Long id,RedirectAttributes attributes)
     {
-        int type = typeService.delType(id);
+        int tag = tagService.delTag(id);
         attributes.addFlashAttribute("message","删除成功");
-        return "redirect:/admin/types";
+        return "redirect:/admin/tags";
     }
 
-    @PostMapping("/types")
-    public String addType(@Valid Type type, BindingResult result, RedirectAttributes attributes)
+    @PostMapping("/tags")
+    public String addTag(@Valid Tag tag, BindingResult result, RedirectAttributes attributes)
     {
-        if(typeService.getTypeByName(type.getName()).size() != 0)
+        if(tagService.getTagByName(tag.getName()).size() != 0)
         {
             result.rejectValue("name","nameError","不能重复添加");
         }
         if(result.hasErrors())
         {
-            return "/admin/types-input";
+            return "/admin/tags-input";
         }
-        int i = typeService.addType(type);
+        int i = tagService.addTag(tag);
         if (i == 0)
         {
             attributes.addFlashAttribute("message","操作失败!");
@@ -87,21 +87,21 @@ public class TypeController
         {
             attributes.addFlashAttribute("message","操作成功!");
         }
-        return "redirect:/admin/types";
+        return "redirect:/admin/tags";
     }
 
-    @PostMapping("/types/{id}")
-    public String updateType(@Valid Type type, BindingResult result, Long id, RedirectAttributes attributes)
+    @PostMapping("/tags/{id}")
+    public String updateTag(@Valid Tag tag, BindingResult result, Long id, RedirectAttributes attributes)
     {
-        if(typeService.getTypeByName(type.getName()).size() != 0)
+        if(tagService.getTagByName(tag.getName()).size() != 0)
         {
             result.rejectValue("name","nameError","不能重复添加");
         }
         if(result.hasErrors())
         {
-            return "/admin/types-input";
+            return "/admin/tags-input";
         }
-        int i = typeService.updateType(id,type);
+        int i = tagService.updateTag(id,tag);
         if (i == 0)
         {
             attributes.addFlashAttribute("message","操作失败!");
@@ -110,7 +110,7 @@ public class TypeController
         {
             attributes.addFlashAttribute("message","操作成功!");
         }
-        return "redirect:/admin/types";
+        return "redirect:/admin/tags";
     }
 
 //    @RequestMapping("/types/{id}/input")

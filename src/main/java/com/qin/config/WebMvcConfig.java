@@ -1,4 +1,4 @@
-package com.qin.Config;
+package com.qin.config;
 
 import com.qin.Interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;

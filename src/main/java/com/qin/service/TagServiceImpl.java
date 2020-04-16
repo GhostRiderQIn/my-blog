@@ -1,5 +1,13 @@
 package com.qin.service;
 
+import java.util.List;
+
+import com.qin.mapper.TagMapper;
+import com.qin.pojo.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qin.exception.NotFoundException;
@@ -8,11 +16,6 @@ import com.qin.pojo.PageRequest;
 import com.qin.pojo.PageResult;
 import com.qin.pojo.Type;
 import com.qin.util.PageUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * @program: my-blog
@@ -21,58 +24,58 @@ import java.util.List;
  * @create: 2020-04-13 22:08
  **/
 @Service
-public class TypeServiceImpl implements TypeService{
+public class TagServiceImpl implements TagService{
 
     @Autowired
-    private TypeMapper typeMapper;
+    private TagMapper tagMapper;
 
     @Transactional
     @Override
-    public int addType(Type type) {
-        return typeMapper.addType(type);
+    public int addTag(Tag tag) {
+        return tagMapper.addTag(tag);
     }
 
     @Transactional
     @Override
-    public Type getType(Long id) {
-        return typeMapper.getType(id);
+    public Tag getTag(Long id) {
+        return tagMapper.getTag(id);
     }
 
     @Transactional
     @Override
-    public PageResult listType(PageRequest pageRequest) {
+    public PageResult listTag(PageRequest pageRequest) {
         return PageUtil.getPageResult(pageRequest, getPageInfo(pageRequest));
     }
 
     @Override
-    public List<Type> getTypeByName(String name) {
-        return typeMapper.getTypeByName(name);
+    public List<Tag> getTagByName(String name) {
+        return tagMapper.getTagByName(name);
     }
 
-    private PageInfo<Type> getPageInfo(PageRequest pageRequest) {
+    private PageInfo<Tag> getPageInfo(PageRequest pageRequest) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<Type> types = typeMapper.selectPage();
-        return new PageInfo<Type>(types);
+        List<Tag> tags = tagMapper.selectPage();
+        return new PageInfo<Tag>(tags);
     }
 
 
     @Transactional
     @Override
-    public int updateType(Long id, Type type) {
-        Type t = typeMapper.getType(id);
+    public int updateTag(Long id, Tag tag) {
+        Tag t = tagMapper.getTag(id);
         if(t == null)
         {
             throw new NotFoundException("不存在改分类");
         }
 
-        return typeMapper.updateType(id,type);
+        return tagMapper.updateTag(id,tag);
     }
 
     @Transactional
     @Override
-    public int delType(Long id) {
-        return typeMapper.delType(id);
+    public int delTag(Long id) {
+        return tagMapper.delTag(id);
     }
 }

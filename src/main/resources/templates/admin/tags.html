@@ -3,13 +3,13 @@
 <head th:replace="admin/_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客管理</title>
+    <title>标签管理</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
     <link rel="stylesheet" href="../../static/css/me.css">
 </head>
 <body>
     <!--导航栏-->
-    <nav th:replace="admin/_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <nav th:replace="admin/_fragments :: menu(3)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">管理后台</h2>
@@ -38,71 +38,35 @@
     <div class="ui attached pointing menu">
         <div class="ui container">
             <div class="right menu">
-                <a href="#" class="item">发布</a>
-                <a href="#" class="active teal item">列表</a>
+                <a th:href="@{/admin/tags/input}" class="item">新增</a>
+                <a th:href="@{/admin/tags}" class="active teal item">列表</a>
             </div>
         </div>
     </div>
 <!--    中间-->
     <div class="m-container-small m-padded-tb-massive">
         <div class="ui container">
-            <!--form-->
-            <form action="#" method="post" class="ui secondary segment form">
-                <div class="inline fields">
-                    <div class="field">
-
-                        <input type="text" name="title" placeholder="标题">
-                    </div>
-                    <div class="field">
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="type">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">分类</div>
-                            <div class="menu">
-                                <div class="item" data-value="1">错误日志</div>
-                                <div class="item" data-value="2">错误日志</div>
-                                <div class="item" data-value="3">错误日志</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="ui checkbox">
-                            <input type="checkbox" id="recommend" name="recommend">
-                            <label for="recommend">推荐</label>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <button class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
-                    </div>
-
-
-                </div>
-            </form>
-
-            <table class="ui compact teal celled table">
+            <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                <i class="close icon"></i>
+                <div class="header">提示:</div>
+                <p th:text="${message}">操作成功!</p>
+            </div>
+            <table class="ui celled table">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>标题</th>
-                        <th>类型</th>
-                        <th>推荐</th>
-                        <th>更新时间</th>
+                        <th>名称</th>
                         <th>操作</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr th:each="blog,iterStat : ${page.getContent()}">
+                    <tr th:each="tag,iterStat : ${page.getContent()}">
                         <td th:text="${iterStat.count}">1</td>
-                        <td th:text="${blog.title}">hdsahdsa</td>
-                        <td th:text="${blog.type.name}">hdsahdsa</td>
-                        <td th:text="${blog.recommend} == true ? '是':'否'">是</td>
-                        <td th:text="${blog.updateTime}">2020</td>
+                        <td th:text="${tag.name}">hdsahdsa</td>
                         <td>
-                            <a href="#" class="ui mini teal basic button">编辑</a>
-                            <a href="#" class="ui mini red basic button">删除</a>
+                            <a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
+                            <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
                         </td>
                     </tr>
                 </tbody>
@@ -110,10 +74,10 @@
                     <tr>
                         <th colspan="6">
                             <div class="ui pagination menu">
-                                <a class="icon item">上一页</a>
-                                <a class="icon item">下一页</a>
+                                <a th:href="@{/admin/tags(pageNum=${page.getPageNum()-1},pageSize=10)}" th:if="${page.getPageNum() != 1}" class="icon item">上一页</a>
+                                <a th:href="@{/admin/tags(pageNum=${page.getPageNum()+1},pageSize=10)}" th:if="${page.getTotalPages()!=0&&page.getPageNum() != page.getTotalPages()}" class="icon item">下一页</a>
                             </div>
-                            <a href="#" class="ui mini right floated teal basic button">新增</a>
+                            <a th:href="@{/admin/tags/input}" href="#" class="ui mini right floated teal basic button">新增</a>
                         </th>
                     </tr>
                 </tfoot>
@@ -129,7 +93,7 @@
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="../../static/images/my_wx_image.png" alt="" class="ui rounded image" style="width: 110px">
+                            <img th:src="@{/images/my_wx_image.png}" alt="" class="ui rounded image" style="width: 110px">
                         </div>
                     </div>
                 </div>
@@ -170,5 +134,10 @@
     $('.ui.dropdown').dropdown({
         on: 'hover'
     });
+
+    $('.message .close')
+        .on('click',function () {
+            $(this).closest('.message').transition('fade');
+        });
 </script>
 </html>

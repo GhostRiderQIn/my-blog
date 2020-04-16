@@ -21,5 +21,7 @@ public interface TypeMapper {
 
     int updateType(@Param("id") Long id,@Param("type") Type type);
 
-    int delType(Long id);
+    int delType(@Param("id") Long id);
+
+    List<Type> getTypeByName(@Param("name") String name);
 }
