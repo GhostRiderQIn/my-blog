@@ -13,6 +13,8 @@ public interface TypeService {
 
     PageResult listType(PageRequest pageRequest);
 
+    List<Type> getAllTypes();
+
     List<Type> getTypeByName(String name);
 
     int updateType(Long id, Type type);

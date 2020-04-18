@@ -24,4 +24,6 @@ public interface TypeMapper {
     int delType(@Param("id") Long id);
 
     List<Type> getTypeByName(@Param("name") String name);
+
+    List<Type> getAllTypes();
 }

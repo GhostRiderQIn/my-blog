@@ -73,7 +73,7 @@
                 <tfoot>
                     <tr>
                         <th colspan="6">
-                            <div class="ui pagination menu">
+                            <div th:if="${page.getTotalPages()}>1" class="ui pagination menu">
                                 <a th:href="@{/admin/types(pageNum=${page.getPageNum()-1},pageSize=10)}" th:if="${page.getPageNum() != 1}" class="icon item">上一页</a>
                                 <a th:href="@{/admin/types(pageNum=${page.getPageNum()+1},pageSize=10)}" th:if="${page.getTotalPages()!=0&&page.getPageNum() != page.getTotalPages()}" class="icon item">下一页</a>
                             </div>

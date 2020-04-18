@@ -23,7 +23,9 @@
     <select id="getTypeByName"  resultType="Type">
         select * from t_type where name = #{name}
     </select>
-
+    <select id="getAllTypes"  resultType="Type">
+        select * from t_type
+    </select>
     <delete id="delType" parameterType="java.lang.Long">
         delete from t_type where id=#{id}
     </delete>

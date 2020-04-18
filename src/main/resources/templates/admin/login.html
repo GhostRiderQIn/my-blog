@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="ui error message"></div>
-                        <div class="ui negative message" th:text="${message}"></div>
+                        <div th:if="!${#strings.isEmpty(message)}" class="ui negative message" th:text="${message}"></div>
                     </form>
 
                     <div class="ui message">

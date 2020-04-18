@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客新增</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
-    <link rel="stylesheet" href="../../static/css/me.css">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">-->
+<!--    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">-->
+<!--    <link rel="stylesheet" href="../../static/css/me.css">-->
 </head>
 <body>
     <!--导航栏-->
-    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">管理后台</h2>
@@ -39,8 +39,8 @@
     <div class="ui attached pointing menu">
         <div class="ui container">
             <div class="right menu">
-                <a href="#" class="active teal item">发布</a>
-                <a href="#" class="item">列表</a>
+                <a th:href="@{/admin/blogs/input}" class="item">新增</a>
+                <a th:href="@{/admin/blogs}" class="active teal item">列表</a>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
                                 <div class="item" data-value="翻译">翻译</div>
                             </div>
                         </div>
-                        <input type="text" name="title" placeholder="标题">
+                        <input type="text" th:value="${blog.title}" name="title" placeholder="标题">
                     </div>
                 </div>
 
@@ -212,7 +212,7 @@
             width   : "100%",
             height  : 640,
             syncScrolling : "single",
-            path    : "../lib/editormd/lib/"
+            path    : "/lib/editormd/lib/"
         });
 
     });

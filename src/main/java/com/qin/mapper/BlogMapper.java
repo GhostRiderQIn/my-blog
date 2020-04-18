@@ -1,12 +1,9 @@
 package com.qin.mapper;
 
 import com.qin.pojo.Blog;
-import com.qin.pojo.PageResult;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.LinkedList;
 import java.util.List;
 @Mapper
 @Repository

@@ -3,6 +3,7 @@ package com.qin.pojo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Blog {
     private Long id;    //博客id
+    @NotBlank(message = "标题不能为空")
     private String title;   //博客标题
     private String content; //博客文本
     private String firstPicture;    //首图

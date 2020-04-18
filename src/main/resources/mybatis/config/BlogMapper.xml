@@ -88,9 +88,9 @@
             <if test="typeId != null">
                 and b.type_id = #{typeId}
             </if>
-<!--            <if test="recommend != null">-->
-<!--                and b.recommend = #{recommend}-->
-<!--            </if>-->
+            <if test="recommend == true ">
+                and b.recommend = #{recommend}
+            </if>
         </where>
     </select>
 

@@ -34,6 +34,7 @@ public class TypeController
     @GetMapping("/types")
     public String list(PageRequest pageRequest, Model model)
     {
+
         if(pageRequest.getPageNum() == 0 && pageRequest.getPageSize() == 0)
         {
             pageRequest = new PageRequest();
