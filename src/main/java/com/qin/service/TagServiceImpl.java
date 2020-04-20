@@ -1,5 +1,6 @@
 package com.qin.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.qin.mapper.TagMapper;
@@ -52,6 +53,26 @@ public class TagServiceImpl implements TagService{
         return tagMapper.getTagByName(name);
     }
 
+    @Override
+    public List<Tag> getAllTags() {
+        return tagMapper.getAllTags();
+    }
+
+    @Override
+    public List<Tag> getTagsByIds(String ids) {
+        List<Tag> list = new ArrayList<>();
+        if (ids !=null && !ids.equals(""))
+        {
+            String[] idss = ids.split(",");
+            for (String s : idss) {
+                Tag tag = tagMapper.getTag((long) Integer.parseInt(s));
+                System.out.println(tag);
+                list.add(tag);
+            }
+        }
+        return list;
+    }
+
     private PageInfo<Tag> getPageInfo(PageRequest pageRequest) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
@@ -77,5 +98,10 @@ public class TagServiceImpl implements TagService{
     @Override
     public int delTag(Long id) {
         return tagMapper.delTag(id);
+    }
+
+    @Override
+    public List<Tag> getTagTopList(Integer size) {
+        return tagMapper.getTagTopList(size);
     }
 }

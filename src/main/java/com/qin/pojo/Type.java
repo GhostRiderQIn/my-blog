@@ -23,7 +23,7 @@ public class Type {
 
 
     private List<Blog> blogs = new ArrayList<Blog>();
-
+    private Integer blogsCount;
 
     @Override
     public String toString() {

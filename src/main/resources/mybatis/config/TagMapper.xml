@@ -17,14 +17,31 @@
     </update>
 
     <select id="selectPage"  resultType="Tag">
-        select * from t_tag
+        select * from t_tag order by id
     </select>
 
     <select id="getTagByName"  resultType="Tag">
         select * from t_tag where name = #{name}
     </select>
-
+    <select id="getAllTags"  resultType="Tag">
+        select * from t_tag
+    </select>
     <delete id="delTag" parameterType="java.lang.Long">
         delete from t_tag where id=#{id}
     </delete>
+
+
+    <resultMap id="indexTag" type="Tag">
+        <result column="bttagid" property="id"/>
+        <result column="tname" property="name"/>
+        <result column="nums" property="blogsCount"/>
+    </resultMap>
+    <select id="getTagTopList" parameterType="Tag" resultMap="indexTag">
+        select bt.tag_id bttagid,t.name tname,count(bt.tag_id) nums
+        from t_blog_tag bt, t_tag t
+        where bt.tag_id = t.id
+        group by bt.tag_id
+        order by nums desc
+        limit #{size}
+    </select>
 </mapper>

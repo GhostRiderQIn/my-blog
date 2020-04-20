@@ -2,6 +2,7 @@ package com.qin.pojo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.relational.core.sql.In;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Tag {
     private Long id;    //主键
     private String name;//标签名
     private List<Blog> blogs = new ArrayList<>();
-
+    private Integer blogsCount;
     @Override
     public String toString() {
         return "Tag{" +

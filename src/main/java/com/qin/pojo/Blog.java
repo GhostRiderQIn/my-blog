@@ -31,9 +31,12 @@ public class Blog {
     private boolean recommend; //是否推荐
     private Date creatTime; //创建时间
     private Date updateTime;  //更新时间
+    private String description;  //更新时间
 
     private Long typeId;
     private Long userId;
+
+    private String tagIds;
     //对应关系
     private Type type;
 
@@ -42,6 +45,29 @@ public class Blog {
     private User user;
 
     private List<Comment> comments = new ArrayList<>();
+
+    public void tagsToTagIds()
+    {
+        if(this.tags!=null)
+        {
+            boolean flag = true;
+            StringBuffer s = new StringBuffer();
+            for (Tag tag : tags) {
+                if (flag)
+                {
+                    s.append(tag.getId());
+                    flag = false;
+                }
+                else
+                {
+                    s.append(",");
+                    s.append(tag.getId());
+                }
+            }
+            this.tagIds = s.toString();
+        }
+    }
+
     @Override
     public String toString() {
         return "Blog{" +
@@ -58,6 +84,13 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", creatTime=" + creatTime +
                 ", updateTime=" + updateTime +
+                ", typeId=" + typeId +
+                ", userId=" + userId +
+                ", tagIds='" + tagIds + '\'' +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comments=" + comments +
                 '}';
     }
 }

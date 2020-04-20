@@ -4,7 +4,8 @@ import com.qin.pojo.Blog;
 import com.qin.pojo.PageRequest;
 import com.qin.pojo.PageResult;
 
-import javax.swing.*;
+import java.util.List;
+
 
 public interface BlogService {
 
@@ -18,4 +19,9 @@ public interface BlogService {
 
     int addBlog(Blog blog);
 
+    PageResult getIndexBlog(PageRequest pageRequest);
+
+    List<Blog> getResentRecommendBlogs(Integer size);
+
+    PageResult getBlogBySearchTitleOrContent(PageRequest pageRequest,String p);
 }

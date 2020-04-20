@@ -19,9 +19,13 @@ public interface TagMapper {
 
     List<Tag> selectPage();
 
+    List<Tag> getAllTags();
+
     int updateTag(@Param("id") Long id, @Param("tag") Tag tag);
 
     int delTag(@Param("id") Long id);
 
     List<Tag> getTagByName(@Param("name") String name);
+
+    List<Tag> getTagTopList(@Param("size") Integer size);
 }

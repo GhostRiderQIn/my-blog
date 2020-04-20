@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qin.mapper.BlogMapper">
 
-    <insert id="addBlog" parameterType="Blog">
-        insert into t_blog(title,content,firstPicture,flag,views,appreciation,shareStatement,commentAble,published,recommend,creatTime,updateTime,type_id,user_id)
+    <insert id="addBlog" parameterType="Blog" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into t_blog(title,content,firstPicture,flag,views,appreciation,shareStatement,commentAble,published,recommend,creatTime,updateTime,type_id,user_id,description)
         values (#{title},#{content},#{firstPicture},#{flag},#{views},#{appreciation},
         #{shareStatement},#{commentAble},#{published},#{recommend},#{creatTime},
-        #{updateTime},#{typeId},#{userId})
+        #{updateTime},#{typeId},#{userId},#{description})
     </insert>
 
 <!--    <select id="getTag" parameterType="java.lang.Long" resultType="Tag">-->
@@ -22,16 +22,15 @@
         content=#{blog.content},
         firstPicture=#{blog.firstPicture},
         flag=#{blog.flag},
-        views=#{blog.views},
         appreciation=#{blog.appreciation},
         shareStatement=#{blog.shareStatement},
         commentAble=#{blog.commentAble},
         published=#{blog.published},
         recommend=#{blog.recommend},
-        creatTime=#{blog.creatTime},
         updateTime=#{blog.updateTime},
         type_id=#{blog.typeId},
-        user_id=#{blog.userId}
+        user_id=#{blog.userId},
+        description=#{blog.description}
         where id = #{id};
     </update>
 
@@ -51,13 +50,140 @@
         <result column="bupdateTime" property="updateTime"/>
         <result column="btype_id" property="typeId"/>
         <result column="buser_id" property="userId"/>
+        <result column="bdescription" property="description"/>
         <association property="type" javaType="Type">
             <result column="tid" property="id"/>
             <result column="tname" property="name"/>
         </association>
-
     </resultMap>
+    <resultMap id="getOneBlog" extends="blog" type="Blog">
+        <collection property="tags" ofType="Tag">
+            <result column="tagid" property="id"/>
+            <result column="tagname" property="name"/>
+        </collection>
+    </resultMap>
+    <resultMap id="getIndexBlogs" type="Blog" extends="getOneBlog">
+        <association property="user" javaType="User">
+            <result column="uid" property="id"/>
+            <result column="unickname" property="nickname"/>
+            <result column="uavatar" property="avatar"/>
+        </association>
+    </resultMap>
+
     <select id="listBlog" parameterType="Blog" resultMap="blog">
+        select
+        b.id bid,
+        b.title btitle,
+        b.content bcontent,
+        b.firstPicture bfirstPicture,
+        b.flag bflag,
+        b.views bviews,
+        b.appreciation bappreciation,
+        b.shareStatement bshareStatement,
+        b.commentAble bcommentAble,
+        b.published bpublished,
+        b.recommend brecommend,
+        b.creatTime bcreatTime,
+        b.updateTime bupdateTime,
+        b.type_id btype_id,
+        b.user_id buser_id,
+        b.description bdescription,
+        t.name tname,
+        t.id tid,
+        u.id uid
+        from t_blog b,t_type t,t_user u
+        <where>
+            b.type_id = t.id
+            and b.user_id = #{userId}
+            <if test="title != null">
+                <bind name="pattern" value="'%' + title + '%'" />
+                and b.title like #{pattern}
+            </if>
+            <if test="typeId != null">
+                and b.type_id = #{typeId}
+            </if>
+            <if test="recommend == true ">
+                and b.recommend = #{recommend}
+            </if>
+        </where>
+        order by bid
+    </select>
+
+    <select id="getBlogById" parameterType="java.lang.Long" resultMap="getOneBlog">
+        select
+        b.id bid,
+        b.title btitle,
+        b.content bcontent,
+        b.firstPicture bfirstPicture,
+        b.flag bflag,
+        b.views bviews,
+        b.appreciation bappreciation,
+        b.shareStatement bshareStatement,
+        b.commentAble bcommentAble,
+        b.published bpublished,
+        b.recommend brecommend,
+        b.creatTime bcreatTime,
+        b.updateTime bupdateTime,
+        b.type_id btype_id,
+        b.user_id buser_id,
+        b.description bdescription,
+        t.name tname,
+        t.id tid,
+        tbtag.tag_id tagid,
+        ttag.name tagname
+        from t_blog b,t_type t, t_blog_tag tbtag, t_tag ttag
+        where b.id = #{id}
+            and b.type_id = t.id
+           and tbtag.blog_id = b.id
+           and ttag.id = tbtag.tag_id
+    </select>
+
+    <select id="getBlogs" resultMap="getIndexBlogs">
+        select
+        b.id bid,
+        b.title btitle,
+        b.content bcontent,
+        b.firstPicture bfirstPicture,
+        b.flag bflag,
+        b.views bviews,
+        b.appreciation bappreciation,
+        b.shareStatement bshareStatement,
+        b.commentAble bcommentAble,
+        b.published bpublished,
+        b.recommend brecommend,
+        b.creatTime bcreatTime,
+        b.updateTime bupdateTime,
+        b.type_id btype_id,
+        b.user_id buser_id,
+        b.description bdescription,
+        t.name tname,
+        t.id tid,
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar
+        from t_blog b,t_type t, t_user u
+        where
+           b.type_id = t.id
+           and u.id = b.user_id
+    </select>
+    <delete id="delBlog" parameterType="java.lang.Long">
+        delete from t_blog where id=#{id}
+    </delete>
+
+    <resultMap id="getResentRecommend" type="Blog">
+        <result column="bid" property="id"/>
+        <result column="btitle" property="title"/>
+        <result column="bupdateTime" property="updateTime"/>
+    </resultMap>
+    <select id="getResentRecommendBlogs" parameterType="java.lang.Integer" resultMap="getResentRecommend">
+        select b.id bid,b.title btitle ,b.updateTime bupdateTime
+        from t_blog b
+        where recommend = true
+        order by updateTime desc
+        limit #{size}
+    </select>
+
+    <select id="getBlogBySearchTitleOrContent" resultMap="getIndexBlogs">
         select
         b.id bid,
         b.title btitle,
@@ -76,29 +202,14 @@
         b.user_id buser_id,
         t.name tname,
         t.id tid,
-
-        u.id uid
-        from t_blog b,t_type t,t_user u
-        <where>
-            b.type_id = t.id
-            <if test="title != null">
-                <bind name="pattern" value="'%' + title + '%'" />
-                and b.title like #{pattern}
-            </if>
-            <if test="typeId != null">
-                and b.type_id = #{typeId}
-            </if>
-            <if test="recommend == true ">
-                and b.recommend = #{recommend}
-            </if>
-        </where>
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar
+        from t_blog b,t_type t, t_user u
+        where
+           b.type_id = t.id
+           and u.id = b.user_id
+           and (b.title like "%"#{p}"%"
+           or b.content like "%"#{p}"%")
     </select>
-
-    <select id="getBlogById" parameterType="java.lang.Long" resultType="Blog">
-        select * from t_blog where id = #{id}
-    </select>
-
-    <delete id="delBlog" parameterType="java.lang.Long">
-        delete from t_blog where id=#{id}
-    </delete>
 </mapper>

@@ -10,6 +10,8 @@ import java.util.List;
 public interface BlogMapper {
     Blog getBlogById(@Param("id") Long id);
 
+    List<Blog> getBlogs();
+
     List<Blog> listBlog(Blog blog);
 
     int delBlog(@Param("id") Long id);
@@ -17,4 +19,8 @@ public interface BlogMapper {
     int updateBlog(@Param("id") Long id,@Param("blog") Blog blog);
 
     int addBlog(Blog blog);
+
+    List<Blog> getResentRecommendBlogs(Integer size);
+
+    List<Blog> getBlogBySearchTitleOrContent(@Param("p") String p);
 }

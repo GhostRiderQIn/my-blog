@@ -4,15 +4,14 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qin.exception.NotFoundException;
 import com.qin.mapper.BlogMapper;
-import com.qin.pojo.Blog;
-import com.qin.pojo.PageRequest;
-import com.qin.pojo.PageResult;
-import com.qin.pojo.Type;
+import com.qin.mapper.BlogTagMapper;
+import com.qin.pojo.*;
 import com.qin.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +25,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private BlogMapper blogMapper;
+
+    @Autowired
+    private BlogTagMapper blogTagMapper;
 
     @Override
     @Transactional
@@ -48,6 +50,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     @Transactional
     public int delBlog(Long id) {
+        blogTagMapper.delBlogTagByBlogId(id);
         return blogMapper.delBlog(id);
     }
 
@@ -59,12 +62,61 @@ public class BlogServiceImpl implements BlogService {
         {
             throw new NotFoundException("该博客不存在");
         }
+        blog.tagsToTagIds();
+        blog.setUpdateTime(new Date());
+        blogTagMapper.delBlogTagByBlogId(blog.getId());
+        for (Tag tag : blog.getTags()) {
+            blogTagMapper.addBlogTag(blog.getId(),tag.getId());
+        }
         return blogMapper.updateBlog(id,blog);
     }
 
     @Override
     @Transactional
     public int addBlog(Blog blog) {
-        return blogMapper.addBlog(blog);
+        blog.setCreatTime(new Date());
+        blog.setUpdateTime(new Date());
+        blog.setViews(0);
+        blogMapper.addBlog(blog);
+        for (Tag tag : blog.getTags()) {
+            blogTagMapper.addBlogTag(blog.getId(),tag.getId());
+        }
+        return 1;
     }
+
+    @Transactional
+    @Override
+    public PageResult getIndexBlog(PageRequest pageRequest) {
+
+        return PageUtil.getPageResult(pageRequest,getIndexPageInfo(pageRequest));
+    }
+
+    @Override
+    public List<Blog> getResentRecommendBlogs(Integer size) {
+        return blogMapper.getResentRecommendBlogs(size);
+    }
+    private PageInfo<Blog> getIndexPageInfo(PageRequest pageRequest) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        List<Blog> blogs = blogMapper.getBlogs();
+        return new PageInfo<Blog>(blogs);
+    }
+
+
+    @Override
+    public PageResult getBlogBySearchTitleOrContent(PageRequest pageRequest,String p) {
+        return PageUtil.getPageResult(pageRequest,getSearchResult(pageRequest,p));
+    }
+    private PageInfo<Blog> getSearchResult(PageRequest pageRequest,String p) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        List<Blog> blogs = blogMapper.getBlogBySearchTitleOrContent(p);
+        return new PageInfo<Blog>(blogs);
+    }
+
+
+
+
 }

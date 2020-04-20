@@ -20,4 +20,6 @@ public interface TypeService {
     int updateType(Long id, Type type);
 
     int delType(Long id);
+
+    List<Type> getTopType(Integer size);
 }

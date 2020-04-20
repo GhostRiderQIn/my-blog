@@ -1,5 +1,6 @@
 package com.qin.mapper;
 
+import com.qin.pojo.Tag;
 import com.qin.pojo.Type;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -26,4 +27,6 @@ public interface TypeMapper {
     List<Type> getTypeByName(@Param("name") String name);
 
     List<Type> getAllTypes();
+
+    List<Type> getTypeTopList(@Param("size") Integer size);
 }

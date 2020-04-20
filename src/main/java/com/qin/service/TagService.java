@@ -16,7 +16,13 @@ public interface TagService {
 
     List<Tag> getTagByName(String name);
 
+    List<Tag> getAllTags();
+
+    List<Tag> getTagsByIds(String ids);
+
     int updateTag(Long id, Tag tag);
 
     int delTag(Long id);
+
+    List<Tag> getTagTopList(Integer size);
 }

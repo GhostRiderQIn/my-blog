@@ -38,8 +38,8 @@
     <div class="ui attached pointing menu">
         <div class="ui container">
             <div class="right menu">
-                <a href="#" class="item">发布</a>
-                <a href="#" class="active teal item">列表</a>
+                <a href="#" th:href="@{/admin/blogs/input}" class="item">发布</a>
+                <a href="#" th:href="@{/admin/blogs}" class="active teal item">列表</a>
             </div>
         </div>
     </div>
@@ -54,17 +54,22 @@
 
                         <input type="text" name="title" placeholder="标题">
                     </div>
+
                     <div class="field">
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="typeId">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">分类</div>
-                            <div class="menu">
-                                <div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.getName()}">错误日志</div>
-<!--                                <div class="item" data-value="2">错误日志</div>-->
-<!--                                <div class="item" data-value="3">错误日志</div>-->
+                        <div class="ui labeled action input">
+                            <div class="ui type selection dropdown">
+                                <input type="hidden" name="typeId">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">分类</div>
+                                <div class="menu">
+                                    <div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.getName()}">错误日志</div>
+                                    <!--                                <div class="item" data-value="2">错误日志</div>-->
+                                    <!--                                <div class="item" data-value="3">错误日志</div>-->
+                                </div>
                             </div>
+                            <button id="clear" class="ui clear button">clear</button>
                         </div>
+
                     </div>
 
                     <div class="field">
@@ -90,6 +95,7 @@
                         <th>标题</th>
                         <th>类型</th>
                         <th>推荐</th>
+                        <th>是否发布</th>
                         <th>更新时间</th>
                         <th>操作</th>
                     </tr>
@@ -101,7 +107,8 @@
                         <td th:text="${blog.title}">hdsahdsa</td>
                         <td th:text="${blog.type.name}">hdsahdsa</td>
                         <td th:text="${blog.recommend} == true ? '是':'否'">是</td>
-                        <td th:text="${blog.updateTime}">2020</td>
+                        <td th:text="${blog.published} == true ? '发布':'草稿'">是</td>
+                        <td th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd HH:mm:ss')}">2020</td>
                         <td>
                             <a th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
                             <a th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
@@ -110,23 +117,29 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th colspan="6">
+                        <th colspan="7">
                             <div class="ui pagination menu" th:if="${page.getTotalPages()}>1">
-                                <a onclick="page(this)" th:attr="data-page=${page.getPageNum()}-1,pageSize=10" th:if="${page.getPageNum() != 1}" class="icon item">上一页</a>
-                                <a onclick="page(this)" th:attr="data-page=${page.getPageNum()}+1,pageSize=10" th:if="${page.getTotalPages()!=0&&page.getPageNum() != page.getTotalPages()}" class="icon item">下一页</a>
+                                <a onclick="page(this)" th:attr="data-page=${page.getPageNum()}-1" th:if="${page.getPageNum() != 1}" class="icon item">上一页</a>
+                                <a onclick="page(this)" th:attr="data-page=${page.getPageNum()}+1" th:if="${page.getTotalPages()!=0&&page.getPageNum() != page.getTotalPages()}" class="icon item">下一页</a>
                             </div>
-                            <a th:href="@{/admin/blog/input}" href="#" class="ui mini right floated teal basic button">新增</a>
+                            <a th:href="@{/admin/blogs/input}" href="#" class="ui mini right floated teal basic button">新增</a>
                         </th>
                     </tr>
                     </tfoot>
                 </table>
+                <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                    <i class="close icon"></i>
+                    <div class="header">提示:</div>
+                    <p th:text="${message}">操作成功!</p>
+                </div>
+
             </div>
 
         </div>
     </div>
 
 <!--    底部-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
@@ -165,6 +178,10 @@
 <script th:src="@{/js/jquery-3.4.1.js}"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
 <script>
+    $('.message .close')
+        .on('click',function () {
+            $(this).closest('.message').transition('fade');
+        });
 
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
@@ -177,7 +194,7 @@
     function page(obj)
     {
         $("[name='page']").val($(obj).data("page"));
-        loaddata()
+        loaddata();
     }
 
     function loaddata() {
@@ -185,13 +202,18 @@
            title: $("[name='title']").val(),
            typeId: $("[name='typeId']").val(),
            recommend: $("[name='recommend']").prop('checked'),
-            page: $("[name='page']").val()
-
+            pageNum: $("[name='page']").val(),
+            pageSize: 5
         });
     }
 
     $('#search-btn').click(function () {
+        $("[name='page']").val(1);
         loaddata();
+    });
+
+    $('#clear').on('click',function () {
+        $('.ui .type').dropdown('clear');
     })
 </script>
 </html>

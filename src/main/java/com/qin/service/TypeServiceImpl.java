@@ -80,4 +80,9 @@ public class TypeServiceImpl implements TypeService{
     public int delType(Long id) {
         return typeMapper.delType(id);
     }
+
+    @Override
+    public List<Type> getTopType(Integer size) {
+        return typeMapper.getTypeTopList(size);
+    }
 }

@@ -17,7 +17,7 @@
     </update>
 
     <select id="selectPage"  resultType="Type">
-        select * from t_type
+        select * from t_type order by id
     </select>
 
     <select id="getTypeByName"  resultType="Type">
@@ -29,4 +29,20 @@
     <delete id="delType" parameterType="java.lang.Long">
         delete from t_type where id=#{id}
     </delete>
+
+    <resultMap id="indexType" type="Type">
+        <result column="tid" property="id"/>
+        <result column="tname" property="name"/>
+        <result column="nums" property="blogsCount"/>
+    </resultMap>
+
+    <select id="getTypeTopList" parameterType="java.lang.Integer" resultMap="indexType">
+        select t.id tid,t.name tname, count(t.id) nums
+        from t_type t
+        left join t_blog b
+        on b.type_id = t.id
+        GROUP BY t.id
+        order by count(t.id) desc
+        limit #{size};
+    </select>
 </mapper>

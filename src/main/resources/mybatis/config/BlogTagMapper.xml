@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qin.mapper.BlogTagMapper">
+
+    <insert id="addBlogTag">
+        insert into t_blog_tag(blog_id,tag_id) values (#{blogId},#{tagId})
+    </insert>
+    <delete id="delBlogTagByBlogId" parameterType="java.lang.Long">
+        delete from t_blog_tag where blog_id = #{id}
+    </delete>
+
+</mapper>
