@@ -16,7 +16,6 @@ import java.util.List;
  **/
 @Data
 @NoArgsConstructor
-
 public class Comment
 {
     private Long id;    //主键id
@@ -27,10 +26,14 @@ public class Comment
     private Date creatTime;//评论时间
 
     private Blog blog;
+    private Long blogId;
 
     private List<Comment> replyComments = new ArrayList<>();
 
     private Comment parentComment;
+    private Long parentCommentId;
+    private Long rootCommentId;
+
 
     @Override
     public String toString() {
@@ -41,6 +44,12 @@ public class Comment
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", creatTime=" + creatTime +
+                ", blog=" + blog +
+                ", blogId=" + blogId +
+                ", replyComments=" + replyComments +
+                ", parentComment=" + parentComment +
+                ", parentCommentId=" + parentCommentId +
+                ", rootCommentId=" + rootCommentId +
                 '}';
     }
 }

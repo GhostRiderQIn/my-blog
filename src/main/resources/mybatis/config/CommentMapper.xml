@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qin.mapper.CommentMapper">
+
+    <insert id="addComment">
+        insert into t_comment(nickname,email,content,creatTime,blog_id,parent_comment_id,avatar,root_comment_id)
+        values (#{nickname},#{email},#{content},#{creatTime},#{blogId},#{parentCommentId},#{avatar},#{rootCommentId})
+    </insert>
+
+    <select id="getRootCommentsByBlogId" parameterType="java.lang.Long" resultType="Comment">
+        select * from t_comment where blog_id=#{id} and (parent_comment_id =-1 and root_comment_id=-1) order by creatTime
+    </select>
+
+    <resultMap id="getComments" type="Comment">
+        <result property="id" column="id"/>
+        <result property="nickname" column="nickname"/>
+        <result property="email" column="email"/>
+        <result property="content" column="content"/>
+        <result property="avatar" column="avatar"/>
+        <result property="creatTime" column="creatTime"/>
+        <result property="blogId" column="blogId"/>
+        <result property="parentCommentId" column="parentCommentId"/>
+        <result property="rootCommentId" column="rootCommentId"/>
+        <association property="parentComment" javaType="Comment">
+            <result property="id" column="tid"/>
+            <result property="nickname" column="tnickname"/>
+        </association>
+    </resultMap>
+    <select id="getCommentsByParentId" resultMap="getComments">
+        select
+            c.id id,
+            c.nickname nickname,
+            c.email email,
+            c.content content,
+            c.avatar avatar,
+            c.creatTime creatTime,
+            c.blog_id blogId,
+            c.parent_comment_id parentCommentId,
+            c.root_comment_id rootCommentId,
+            t.id tid,
+            t.nickname tnickname
+        from t_comment c,t_comment t
+        where (c.root_comment_id = #{parId})
+          and c.parent_comment_id = t.id
+          and c.blog_id=#{blogId}
+        order by c.creatTime
+    </select>
+
+</mapper>

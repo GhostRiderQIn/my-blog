@@ -11,6 +11,8 @@ public interface BlogService {
 
     Blog getBlogById(Long id);
 
+    Blog getBlogByIdAndConvert(Long id);
+
     PageResult listBlog(PageRequest pageRequest, Blog blog);
 
     int delBlog(Long id);

@@ -13,3 +13,5 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+comment.avatar: /images/avatar.jpg

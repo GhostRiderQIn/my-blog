@@ -109,7 +109,7 @@
         order by bid
     </select>
 
-    <select id="getBlogById" parameterType="java.lang.Long" resultMap="getOneBlog">
+    <select id="getBlogById" parameterType="java.lang.Long" resultMap="getIndexBlogs">
         select
         b.id bid,
         b.title btitle,
@@ -129,11 +129,15 @@
         b.description bdescription,
         t.name tname,
         t.id tid,
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar,
         tbtag.tag_id tagid,
         ttag.name tagname
-        from t_blog b,t_type t, t_blog_tag tbtag, t_tag ttag
+        from t_blog b,t_type t, t_blog_tag tbtag, t_tag ttag, t_user u
         where b.id = #{id}
-            and b.type_id = t.id
+           and b.user_id = u.id
+           and b.type_id = t.id
            and tbtag.blog_id = b.id
            and ttag.id = tbtag.tag_id
     </select>

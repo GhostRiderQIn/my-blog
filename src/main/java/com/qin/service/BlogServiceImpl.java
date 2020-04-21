@@ -6,6 +6,7 @@ import com.qin.exception.NotFoundException;
 import com.qin.mapper.BlogMapper;
 import com.qin.mapper.BlogTagMapper;
 import com.qin.pojo.*;
+import com.qin.util.MarkdownUtil;
 import com.qin.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,18 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     public Blog getBlogById(Long id) {
         return blogMapper.getBlogById(id);
+    }
+
+    @Override
+    @Transactional
+    public Blog getBlogByIdAndConvert(Long id) {
+        Blog blog = blogMapper.getBlogById(id);
+        if (blog == null)
+            throw new NotFoundException("博客不存在");
+        String content = blog.getContent();
+        blog.setContent(MarkdownUtil.markdownToHtmlExtensions(content));
+
+        return blog;
     }
 
     @Override

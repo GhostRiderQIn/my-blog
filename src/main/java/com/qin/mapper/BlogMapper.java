@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface BlogMapper {
     Blog getBlogById(@Param("id") Long id);
-
     List<Blog> getBlogs();
+
 
     List<Blog> listBlog(Blog blog);
 

@@ -9,6 +9,7 @@ import com.qin.service.TypeService;
 import com.qin.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
@@ -28,13 +29,13 @@ class MyBlogApplicationTests
 
 	@Autowired
 	BlogMapper blogMapper;
+
+	@Value("${comment.avatar}")
+	private String avatar;
 	@Test
 	void contextLoads()
 	{
-		Blog blog = new Blog();
-		blog.setUserId(1l);
-		List<Blog> blogs = blogMapper.listBlog(blog);
-		System.out.println(blogs.size());
+		System.out.println(avatar);
 	}
 
 }

@@ -43,34 +43,34 @@
             <div class="ui top attached segment">
                 <div class="ui middle horizontal link list">
                     <div class="item">
-                        <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" class="ui avatar image">
-                        <div class="content"><a href="#" class="header">秦达</a></div>
+                        <img src="https://i.picsum.photos/id/1005/100/100.jpg" th:src="@{${blog.getUser().getAvatar()}}" alt="" class="ui avatar image">
+                        <div class="content"><a href="#" th:text="${blog.getUser().getNickname()}" class="header">秦达</a></div>
                     </div>
                     <div class="item">
-                        <i class="calendar icon"></i> 2020-04-06
+                        <i class="calendar icon"></i> <span th:text="${#dates.format(blog.getUpdateTime(),'yyyy-MM-dd HH:mm')}">2020-04-06</span>
                     </div>
                     <div class="item">
-                        <i class="eye icon"></i>5611
+                        <i class="eye icon"></i><span th:text="${blog.getViews()}">5611</span>
                     </div>
                 </div>
             </div>
 
             <!--图片-->
             <div class="ui attached segment">
-                <img src="https://i.picsum.photos/id/1005/800/450.jpg" alt="" class="ui rounded fluid image">
+                <img src="https://i.picsum.photos/id/1005/800/450.jpg" alt="" th:src="@{${blog.getFirstPicture()}}" class="ui rounded fluid image">
             </div>
 
             <!--内容-->
             <div class="ui m-padded-tb-big attached segment">
                 <!--原创标签-->
                 <div class="ui right aligned basic segment">
-                    <div class="ui basic label orange">原创</div>
+                    <div class="ui basic label orange" th:text="${blog.getFlag()}">原创</div>
                 </div>
                 <!--标题-->
-                <h2 class="ui center aligned header">标题</h2>
+                <h2 class="ui center aligned header" th:text="${blog.getTitle()}">标题</h2>
                 <br>
                 <!--文章内容-->
-                <div id="content" class="typo typo-selection js-toc-content m-padded-lr m-padded-tb-mini">
+                <div id="content" class="typo typo-selection js-toc-content m-padded-lr m-padded-tb-mini" th:utext="${blog.getContent()}">
                     　
                     <h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
                     <pre><code class="language-css">p { color: red }</code></pre>
@@ -431,7 +431,7 @@ h5,h6{font-size:1em;}
 
                 <!--标签-->
                 <div class="m-padded-lr m-padded-tb-big">
-                    <div class="ui basic teal left pointing label ">方法论</div>
+                    <div class="ui basic teal left pointing label " th:each="tag : ${blog.getTags()}" th:text="${tag.getName()}">方法论</div>
                 </div>
 
                 <!--赞赏-->
@@ -461,9 +461,9 @@ h5,h6{font-size:1em;}
                 <div class="ui middle aligned grid">
                     <div class="eleven wide column">
                         <ul class="list">
-                            <li>作者</li>
-                            <li>说明</li>
-                            <li>时间</li>
+                            <li>作者：<span th:text="${blog.getUser().getNickname()}"></span><a th:href="@{/about}">(联系作者)</a></li>
+                            <li>发表时间：<span th:text="${#dates.format(blog.getCreatTime(),'yyyy-MM-dd HH:mm')}"></span></li>
+                            <li>版权声明：自由转载，非商用</li>
                             <li>balabala</li>
                         </ul>
                     </div>
@@ -474,84 +474,108 @@ h5,h6{font-size:1em;}
             </div>
 
             <!--留言区域-->
-            <div id="comment-container" class="ui bottom attached  segment">
-                <div class="ui teal segment">
-                    <div class="ui threaded comments">
-                        <h3 class="ui dividing header">Comments</h3>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Matt</a>
-                                <div class="metadata">
-                                    <span class="date">Today at 5:42PM</span>
+            <div class="ui bottom attached  segment">
+                <div id="comment-container"  class="ui teal segment">
+                    <div th:fragment="commentList">
+                        <div class="ui threaded comments">
+                            <h3 class="ui dividing header">评论</h3>
+                            <div class="comment" th:each="comment : ${comments}">
+                                <a class="avatar">
+                                    <img src="https://i.picsum.photos/id/1005/100/100.jpg" th:src="@{${comment.getAvatar()}}">
+                                </a>
+                                <div class="content">
+                                    <a class="author" th:text="${comment.getNickname()}">Matt</a>
+                                    <div class="metadata">
+                                        <span class="date" th:text="${#dates.format(comment.getCreatTime(),'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                    </div>
+                                    <div class="text" th:text="${comment.getContent()}">
+                                        How artistic!
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply" th:attr="data-commentid=${comment.getId()},data-commentnickname=${comment.getNickname()}" onclick="replyRoot(this)" >回复</a>
+                                    </div>
                                 </div>
-                                <div class="text">
-                                    How artistic!
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">回复</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Elliot Fu</a>
-                                <div class="metadata">
-                                    <span class="date">Yesterday at 12:30AM</span>
-                                </div>
-                                <div class="text">
-                                    <p>This has been very useful for my research. Thanks as well!</p>
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">回复</a>
-                                </div>
-                            </div>
-                            <div class="comments">
-                                <div class="comment">
-                                    <a class="avatar">
-                                        <img src="https://i.picsum.photos/id/1005/100/100.jpg">
-                                    </a>
-                                    <div class="content">
-                                        <a class="author">Jenny Hess</a>
-                                        <div class="metadata">
-                                            <span class="date">Just now</span>
-                                        </div>
-                                        <div class="text">
-                                            Elliot you are always so right :)
-                                        </div>
-                                        <div class="actions">
-                                            <a class="reply">回复</a>
+                                <div class="comments" th:if="${#arrays.length(comment.getReplyComments())!=0}">
+                                    <div class="comment" th:each="reply : ${comment.getReplyComments()}">
+                                        <a class="avatar">
+                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg" th:src="@{${reply.getAvatar()}}">
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" th:text="${reply.getNickname()}">Jenny Hess</a><span class="m-text-thin">&nbsp;&nbsp;回复&nbsp;&nbsp;</span><a class="author" th:text="${reply.getParentComment().getNickname()}"></a>
+                                            <div class="metadata">
+                                                <span class="date" th:text="${#dates.format(reply.getCreatTime(),'yyyy-MM-dd HH:mm')}">Just now</span>
+                                            </div>
+                                            <div class="text" th:text="${reply.getContent()}">
+                                                Elliot you are always so right :)
+                                            </div>
+                                            <div class="actions">
+                                                <a class="reply" th:attr="data-commentid=${reply.getId()},data-commentnickname=${reply.getNickname()},data-rootcommentid=${comment.getId()}" onclick="replyReply(this)">回复</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="https://i.picsum.photos/id/1005/100/100.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Joe Henderson</a>
-                                <div class="metadata">
-                                    <span class="date">5 days ago</span>
-                                </div>
-                                <div class="text">
-                                    Dude, this is awesome. Thanks so much
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">回复</a>
-                                </div>
-                            </div>
+<!--                            <div class="comment">-->
+<!--                                <a class="avatar">-->
+<!--                                    <img src="https://i.picsum.photos/id/1005/100/100.jpg">-->
+<!--                                </a>-->
+<!--                                <div class="content">-->
+<!--                                    <a class="author">Elliot Fu</a>-->
+<!--                                    <div class="metadata">-->
+<!--                                        <span class="date">Yesterday at 12:30AM</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="text">-->
+<!--                                        <p>This has been very useful for my research. Thanks as well!</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="actions">-->
+<!--                                        <a class="reply">回复</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="comments">-->
+<!--                                    <div class="comment">-->
+<!--                                        <a class="avatar">-->
+<!--                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg">-->
+<!--                                        </a>-->
+<!--                                        <div class="content">-->
+<!--                                            <a class="author">Jenny Hess</a>-->
+<!--                                            <div class="metadata">-->
+<!--                                                <span class="date">Just now</span>-->
+<!--                                            </div>-->
+<!--                                            <div class="text">-->
+<!--                                                Elliot you are always so right :)-->
+<!--                                            </div>-->
+<!--                                            <div class="actions">-->
+<!--                                                <a class="reply">回复</a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="comment">-->
+<!--                                <a class="avatar">-->
+<!--                                    <img src="https://i.picsum.photos/id/1005/100/100.jpg">-->
+<!--                                </a>-->
+<!--                                <div class="content">-->
+<!--                                    <a class="author">Joe Henderson</a>-->
+<!--                                    <div class="metadata">-->
+<!--                                        <span class="date">5 days ago</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="text">-->
+<!--                                        Dude, this is awesome. Thanks so much-->
+<!--                                    </div>-->
+<!--                                    <div class="actions">-->
+<!--                                        <a class="reply" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)">回复</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
                 <!--评论表单-->
-                <div class="ui form">
+                <div id="comment-form" class="ui form">
+                    <input type="hidden" name="blogId" th:value="${blog.getId()}">
+                    <input type="hidden" name="parentCommentId" th:value="-1">
+                    <input type="hidden" name="rootCommentId" th:value="-1">
                     <div class="field">
                         <textarea name="content" placeholder="请输入评论信息 ..." id="" cols="30" rows="10"></textarea>
                     </div>
@@ -569,7 +593,7 @@ h5,h6{font-size:1em;}
                             </div>
                         </div>
                         <div class="field m-mobile-wide m-margin-bottom-mini">
-                            <button class="ui m-mobile-wide teal button"><i class="edit icon"></i> 发布</button>
+                            <button id="comment-button" type="button" class="ui m-mobile-wide teal button"><i class="edit icon"></i> 发布</button>
                         </div>
                     </div>
                 </div>
@@ -638,9 +662,17 @@ h5,h6{font-size:1em;}
 <script th:src="@{/lib/qrcode/qrcode.min.js}"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-<script>
+<script th:inline="javascript">
+
+    $(function () {
+        $('#comment-container').load("/comment/"+[[${blog.getId()}]])
+    });
+
+    var serurl="localhost:8080";
+
+    var url = /*[[@{/blog/{id}(id=${blog.getId()})}]]*/"";
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "http://jindo.dev.naver.com/collie",
+        text: serurl+url,
         width: 120,
         height: 120,
         colorDark : "#000000",
@@ -681,10 +713,98 @@ h5,h6{font-size:1em;}
 
     $('#toTop-button').click(function () {
         $(window).scrollTo(0,500);
-    })
+    });
 
     $('#toComment-button').click(function () {
         $(window).scrollTo($("#comment-container").offset().top,500);
+    });
+
+
+    $('.ui.form').form
+    ({
+        fields:
+            {
+                title:
+                    {
+                        identifier: 'content',
+                        rules:
+                            [{
+                                type: 'empty',
+                                prompt: '内容：请输入评论内容'
+                            }]
+                    },
+                fenlei:
+                    {
+                        identifier: 'nickname',
+                        rules: [{
+                            type: 'empty',
+                            prompt: '姓名：请输入您的昵称'
+                        }]
+                    },
+                biaoqian:
+                    {
+                        identifier: 'email',
+                        rules: [{
+                            type: 'email',
+                            prompt: '邮箱：请输出您的邮箱'
+                        }]
+                    }
+            }
+    });
+
+    $('#comment-button').click(function () {
+        var flag = $('.ui.form').form('validate form');
+        if(flag)
+        {
+            postData();
+            console.log('校验成功');
+        }
+        else
+        {
+            console.log('校验失败');
+        }
     })
+    function postData() {
+        $('#comment-container').load("/comments",{
+            "blogId": $("[name='blogId']").val(),
+            "parentCommentId": $("[name='parentCommentId']").val(),
+            "rootCommentId": $("[name='rootCommentId']").val(),
+            "content":$("[name='content']").val(),
+            "nickname": $("[name='nickname']").val(),
+            "email": $("[name='email']").val()
+        },function (responseTxt, statusTxt, xhr) {
+
+            $(window).scrollTo($('#comment-container'),500);
+            $("[name='email']").val('');
+            $("[name='nickname']").val('');
+            $("[name='parentCommentId']").val(-1);
+            $("[name='rootCommentId']").val(-1);
+            $("[name='content']").val('');
+            $("[name='content']").attr("placeholder","请输入评论...");
+        });
+    }
+    
+    function replyRoot(obj) {
+        var commentid = $(obj).data('commentid');
+        var commentnickname = $(obj).data('commentnickname');
+
+        $("[name='content']").attr("placeholder","@"+commentnickname).focus();
+        $("[name='parentCommentId']").val(commentid);
+        $("[name='rootCommentId']").val(commentid);
+
+        $(window).scrollTo($('#comment-form'),500);
+    }
+
+    function replyReply(obj) {
+        var commentid = $(obj).data('commentid');
+        var commentnickname = $(obj).data('commentnickname');
+        var rootcommentid=$(obj).data('rootcommentid');
+
+        $("[name='content']").attr("placeholder","@"+commentnickname).focus();
+        $("[name='parentCommentId']").val(commentid);
+        $("[name='rootCommentId']").val(rootcommentid);
+
+        $(window).scrollTo($('#comment-form'),500);
+    }
 </script>
 </html>

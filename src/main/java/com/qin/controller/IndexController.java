@@ -56,10 +56,12 @@ public class IndexController
         return "search";
     }
 
-    @GetMapping("/blog")
-    public String blog()
+    @GetMapping("/blog/{id}")
+    public String blog(@PathVariable Long id,Model model)
     {
+        model.addAttribute("blog",blogService.getBlogByIdAndConvert(id));
         return "blog";
     }
+
 
 }
