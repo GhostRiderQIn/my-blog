@@ -484,7 +484,10 @@ h5,h6{font-size:1em;}
                                     <img src="https://i.picsum.photos/id/1005/100/100.jpg" th:src="@{${comment.getAvatar()}}">
                                 </a>
                                 <div class="content">
-                                    <a class="author" th:text="${comment.getNickname()}">Matt</a>
+                                    <a class="author">
+                                        <span  th:text="${comment.getNickname()}">Matt</span>
+                                        <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${comment.isAdmin()}">博主</div>
+                                    </a>
                                     <div class="metadata">
                                         <span class="date" th:text="${#dates.format(comment.getCreatTime(),'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
                                     </div>
@@ -501,7 +504,13 @@ h5,h6{font-size:1em;}
                                             <img src="https://i.picsum.photos/id/1005/100/100.jpg" th:src="@{${reply.getAvatar()}}">
                                         </a>
                                         <div class="content">
-                                            <a class="author" th:text="${reply.getNickname()}">Jenny Hess</a><span class="m-text-thin">&nbsp;&nbsp;回复&nbsp;&nbsp;</span><a class="author" th:text="${reply.getParentComment().getNickname()}"></a>
+                                            <a class="author">
+                                                <span  th:text="${reply.getNickname()}">Matt</span>
+                                                <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${reply.isAdmin()}">博主</div>
+
+                                            </a>
+                                            <span class="m-text-thin">&nbsp;&nbsp;回复&nbsp;&nbsp;</span>
+                                            <a class="author" th:text="${reply.getParentComment().getNickname()}"></a>
                                             <div class="metadata">
                                                 <span class="date" th:text="${#dates.format(reply.getCreatTime(),'yyyy-MM-dd HH:mm')}">Just now</span>
                                             </div>
@@ -583,13 +592,13 @@ h5,h6{font-size:1em;}
                         <div class="field m-mobile-wide m-margin-bottom-mini">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="nickname" placeholder="姓名">
+                                <input type="text" name="nickname"  th:value="${session.user} != null ? ${session.user.nickname}" placeholder="姓名">
                             </div>
                         </div>
                         <div class="field m-mobile-wide m-margin-bottom-mini">
                             <div class="ui left icon input">
                                 <i class="mail icon"></i>
-                                <input type="text" name="email" placeholder="邮箱">
+                                <input type="text" name="email" placeholder="邮箱" th:value="${session.user} != null ? ${session.user.email}">
                             </div>
                         </div>
                         <div class="field m-mobile-wide m-margin-bottom-mini">
@@ -774,9 +783,16 @@ h5,h6{font-size:1em;}
             "email": $("[name='email']").val()
         },function (responseTxt, statusTxt, xhr) {
 
-            $(window).scrollTo($('#comment-container'),500);
-            $("[name='email']").val('');
-            $("[name='nickname']").val('');
+            var user = [[${session.user}]];
+            if (!$.isEmptyObject(user))
+            {
+                $("[name='email']").val(user.email);
+                $("[name='nickname']").val(user.nickname);
+            }
+            else {
+                $("[name='email']").val('');
+                $("[name='nickname']").val('');
+            }
             $("[name='parentCommentId']").val(-1);
             $("[name='rootCommentId']").val(-1);
             $("[name='content']").val('');
@@ -792,7 +808,7 @@ h5,h6{font-size:1em;}
         $("[name='parentCommentId']").val(commentid);
         $("[name='rootCommentId']").val(commentid);
 
-        $(window).scrollTo($('#comment-form'),500);
+        // $(window).scrollTo($('#comment-form'),500);
     }
 
     function replyReply(obj) {

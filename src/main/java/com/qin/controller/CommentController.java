@@ -1,6 +1,7 @@
 package com.qin.controller;
 
 import com.qin.pojo.Comment;
+import com.qin.pojo.User;
 import com.qin.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 /**
@@ -35,13 +37,19 @@ public class CommentController {
 
 
     @PostMapping("/comments")
-    public String post(Comment comment)
+    public String post(Comment comment, HttpSession session)
     {
-        System.out.println(avatar);
+        User user = (User) session.getAttribute("user");
+        if(user != null)
+        {
+            comment.setAvatar(user.getAvatar());
+            comment.setAdmin(true);
+        }
+
         comment.setAvatar(avatar);
         commentService.addComment(comment);
-        String a = "redirect:/comment/" + comment.getBlogId();
-        return a;
+
+        return "redirect:/comment/" + comment.getBlogId();
     }
 
 }

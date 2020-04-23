@@ -5,8 +5,8 @@
 <mapper namespace="com.qin.mapper.CommentMapper">
 
     <insert id="addComment">
-        insert into t_comment(nickname,email,content,creatTime,blog_id,parent_comment_id,avatar,root_comment_id)
-        values (#{nickname},#{email},#{content},#{creatTime},#{blogId},#{parentCommentId},#{avatar},#{rootCommentId})
+        insert into t_comment(nickname,email,content,creatTime,blog_id,parent_comment_id,avatar,root_comment_id,isAdmin)
+        values (#{nickname},#{email},#{content},#{creatTime},#{blogId},#{parentCommentId},#{avatar},#{rootCommentId},#{isAdmin})
     </insert>
 
     <select id="getRootCommentsByBlogId" parameterType="java.lang.Long" resultType="Comment">
@@ -23,6 +23,7 @@
         <result property="blogId" column="blogId"/>
         <result property="parentCommentId" column="parentCommentId"/>
         <result property="rootCommentId" column="rootCommentId"/>
+        <result property="isAdmin" column="cisAdmin"/>
         <association property="parentComment" javaType="Comment">
             <result property="id" column="tid"/>
             <result property="nickname" column="tnickname"/>
@@ -39,6 +40,7 @@
             c.blog_id blogId,
             c.parent_comment_id parentCommentId,
             c.root_comment_id rootCommentId,
+            c.isAdmin cisAdmin,
             t.id tid,
             t.nickname tnickname
         from t_comment c,t_comment t

@@ -34,6 +34,7 @@ public class Comment
     private Long parentCommentId;
     private Long rootCommentId;
 
+    private boolean isAdmin;
 
     @Override
     public String toString() {
