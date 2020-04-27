@@ -41,8 +41,12 @@
         from t_type t
         left join t_blog b
         on b.type_id = t.id
+        where b.id is not null
         GROUP BY t.id
         order by count(t.id) desc
-        limit #{size};
+        <if test="size != -1">
+            limit #{size};
+        </if>
+
     </select>
 </mapper>

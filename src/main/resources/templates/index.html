@@ -112,14 +112,14 @@
                                     <i class="idea icon"></i> 分类
                                 </div>
                                 <div class="right aligned column">
-                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                    <a href="#" target="_blank" th:href="@{/types/-1}">more <i class="angle double right icon"></i></a>
                                 </div>
                             </div>
                         </div>
                         <!-- 具体分类 -->
                         <div class="ui teal segment">
                             <div class="ui fluid vertical menu" >
-                                <a href="#" class="item" th:each="type : ${types}">
+                                <a href="#" class="item" th:href="@{/types/{id}(id=${type.getId()})}" th:each="type : ${types}">
                                     <span th:text="${type.getName()}">学习日志</span>
                                     <div class="ui teal basic left pointing label" th:text="${type.getBlogsCount()}">13</div>
                                 </a>
@@ -136,13 +136,13 @@
                                     <i class="tags icon"></i> 标签
                                 </div>
                                 <div class="right aligned column">
-                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                    <a href="#" target="_blank" th:href="@{/tags/-1}">more <i class="angle double right icon"></i></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="ui teal segment">
-                            <a th:each="tag:${tags}" target="_blank" href="#" class="ui teal basic left pointing label m-margin-tb-mini">
+                            <a th:each="tag:${tags}" th:href="@{/tags/{id}(id=${tag.getId()})}" target="_blank" href="#" class="ui teal basic left pointing label m-margin-tb-mini">
                                 <span th:text="${tag.getName()}">方法论方法论方法论</span><div th:text="${tag.getBlogsCount()}" class="detail">23</div>
                             </a>
                         </div>
@@ -156,7 +156,7 @@
                             <i class="bookmark icon"></i> 最新推荐
                         </div>
                         <div class="ui segment" th:each="recommend:${ResentRecommend}">
-                            <a href="#" th:href="@{/{id}(id=${recommend.getId()})}" target="_blank" class="m-black m-text-thin" th:text="${recommend.getTitle()}">用户故事(User Story)</a>
+                            <a href="#" th:href="@{/blog/{id}(id=${recommend.getId()})}" target="_blank" class="m-black m-text-thin" th:text="${recommend.getTitle()}">用户故事(User Story)</a>
                         </div>
                     </div>
 

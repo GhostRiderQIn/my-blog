@@ -63,5 +63,11 @@ public class IndexController
         return "blog";
     }
 
+    @GetMapping("/about")
+    public String about()
+    {
+        return "about";
+    }
+
 
 }

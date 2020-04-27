@@ -41,156 +41,62 @@
                         <div class="ui teal header">分类</div>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-inline-block"> 6 </h2> 个
+                        共 <h2 class="ui orange header m-inline-block" th:text="${#arrays.length(types)}"> 6 </h2> 个
                     </div>
                 </div>
             </div>
             <div class="ui attached  segment m-padded-tb-big">
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic teal button">Java</a>
-                    <div class="ui basic teal left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">Java</a>
-                    <div class="ui basic left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">JavaJava</a>
-                    <div class="ui basic left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">Java</a>
-                    <div class="ui basic left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">JavaJava</a>
-                    <div class="ui basic left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">JavaJava</a>
-                    <div class="ui basic left pointing label">24</div>
-                </div>
-
-                <div class="ui labeled button m-margin-tb-mini1">
-                    <a href="#" class="ui basic button">Java</a>
-                    <div class="ui basic left pointing label">24</div>
+                <div class="ui labeled button m-margin-tb-mini1" th:each="type:${types}">
+                    <a href="#" class="ui basic teal button" th:href="@{/types/{id}(id=${type.getId()})}" th:classappend="${type.getId() == active} ? 'active'" th:text="${type.getName()}">Java</a>
+                    <div class="ui basic teal left pointing label" th:text="${type.getBlogsCount()}">24</div>
                 </div>
             </div>
 
             <div class="ui top attached teal segment">
-                <div class="ui padded vertical segment m-padded-tb-big m-padded-lr-mini">
+                <div class="ui padded vertical segment m-padded-tb-big m-padded-lr-mini" th:each="blog:${page.getContent()}">
                     <div class="ui mobile reversed stackable grid">
                         <div class="eleven wide column">
-                            <h3 class="ui header">占位字</h3>
+                            <h3 class="ui header"><a class="m-black" href="#" th:text="${blog.getTitle()}" th:href="@{/blog/{id}(id=${blog.getId()})}" tabindex="_blank"></a></h3>
                             <p class="m-text-thin m-text-spaced m-text-lined">段落内容段段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容</p>
                             <div class="ui stackable grid">
                                 <div class="eleven wide column">
                                     <div class="ui middle horizontal link list">
                                         <div class="item">
-                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" class="ui avatar image">
-                                            <div class="content"><a href="#" class="header">秦达</a></div>
+                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" th:src="@{${blog.getUser().getAvatar()}}" class="ui avatar image">
+                                            <div class="content"><a href="#" class="header" th:text="${blog.getUser().getNickname()}">秦达</a></div>
                                         </div>
                                         <div class="item">
-                                            <i class="calendar icon"></i> 2020-04-06
+                                            <i class="calendar icon"></i>
+                                            <span th:text="${#dates.format(blog.getUpdateTime(), 'yyyy-MM-dd HH:mm')}">2020-04-06</span>
                                         </div>
                                         <div class="item">
-                                            <i class="eye icon"></i>5611
+                                            <i class="eye icon"></i>
+                                            <span th:text="${blog.getViews()}">5611</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="right aligned five wide column">
-                                    <a href="#" target="_blank" class="ui teal basic m-padded-mini m-text-thin label">Java</a>
+                                    <a href="#" target="_blank" class="ui teal basic m-padded-mini m-text-thin label" th:text="${blog.getType().getName()}">Java</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="five wide column">
                             <a href="#" tabindex="_blank" >
-                                <img src="https://i.picsum.photos/id/1005/800/450.jpg" alt="" class="ui rounded image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui padded vertical segment m-padded-tb-big m-padded-lr-mini">
-                    <div class="ui mobile reversed stackable grid">
-                        <div class="eleven wide column">
-                            <h3 class="ui header">占位字</h3>
-                            <p class="m-text-thin m-text-spaced m-text-lined">段落内容段段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容</p>
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <div class="ui middle horizontal link list">
-                                        <div class="item">
-                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" class="ui avatar image">
-                                            <div class="content"><a href="#" class="header">秦达</a></div>
-                                        </div>
-                                        <div class="item">
-                                            <i class="calendar icon"></i> 2020-04-06
-                                        </div>
-                                        <div class="item">
-                                            <i class="eye icon"></i>5611
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="right aligned five wide column">
-                                    <a href="#" target="_blank" class="ui teal basic m-padded-mini m-text-thin label">Java</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="five wide column">
-                            <a href="#" tabindex="_blank" >
-                                <img src="https://i.picsum.photos/id/1005/800/450.jpg" alt="" class="ui rounded image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui padded vertical segment m-padded-tb-big m-padded-lr-mini">
-                    <div class="ui mobile reversed stackable grid">
-                        <div class="eleven wide column">
-                            <h3 class="ui header">占位字</h3>
-                            <p class="m-text-thin m-text-spaced m-text-lined">段落内容段段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容</p>
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <div class="ui middle horizontal link list">
-                                        <div class="item">
-                                            <img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" class="ui avatar image">
-                                            <div class="content"><a href="#" class="header">秦达</a></div>
-                                        </div>
-                                        <div class="item">
-                                            <i class="calendar icon"></i> 2020-04-06
-                                        </div>
-                                        <div class="item">
-                                            <i class="eye icon"></i>5611
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="right aligned five wide column">
-                                    <a href="#" target="_blank" class="ui teal basic m-padded-mini m-text-thin label">Java</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="five wide column">
-                            <a href="#" tabindex="_blank" >
-                                <img src="https://i.picsum.photos/id/1005/800/450.jpg" alt="" class="ui rounded image">
+                                <img src="https://i.picsum.photos/id/1005/800/450.jpg" th:src="@{${blog.getFirstPicture()}}" alt="" class="ui rounded image">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="ui bottom attached segment">
-                <div class="ui middle aligned two column grid">
+            <div class="ui bottom attached segment" th:if="${page.getTotalPages()}>1">
+                <div class="ui middle aligned two column grid" >
                     <div class="column">
-                        <a href="#" class="ui basic teal button">上一页</a>
+                        <a th:href="@{/types/{id}(id=${active},pageNum=${page.getPageNum()-1},pageSize=5)}" th:if="${page.getPageNum() != 1}" href="#" class="ui basic teal button">上一页</a>
                     </div>
                     <div class="right aligned column">
-                        <a href="#" class="ui basic teal button">下一页</a>
+                        <a th:href="@{/types/{id}(id=${active},pageNum=${page.getPageNum()+1},pageSize=5)}" th:if="${page.getTotalPages()!=0&&page.getPageNum() != page.getTotalPages()}" href="#" class="ui basic teal button">下一页</a>
                     </div>
                 </div>
             </div>

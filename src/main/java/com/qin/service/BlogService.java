@@ -14,6 +14,8 @@ public interface BlogService {
     Blog getBlogByIdAndConvert(Long id);
 
     PageResult listBlog(PageRequest pageRequest, Blog blog);
+    PageResult listShowBlog(PageRequest pageRequest, Blog blog);
+    PageResult getBlogByTag(PageRequest pageRequest, Long id);
 
     int delBlog(Long id);
 
@@ -24,6 +26,10 @@ public interface BlogService {
     PageResult getIndexBlog(PageRequest pageRequest);
 
     List<Blog> getResentRecommendBlogs(Integer size);
+
+    List<String> getArchiveYear();
+
+    List<Blog> getBlogByYear(String year);
 
     PageResult getBlogBySearchTitleOrContent(PageRequest pageRequest,String p);
 }

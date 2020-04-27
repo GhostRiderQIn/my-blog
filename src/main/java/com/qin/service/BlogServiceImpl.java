@@ -62,6 +62,31 @@ public class BlogServiceImpl implements BlogService {
     }
     @Override
     @Transactional
+    public PageResult listShowBlog(PageRequest pageRequest, Blog blog) {
+        return PageUtil.getPageResult(pageRequest,getTypePageInfo(pageRequest,blog));
+    }
+
+    @Override
+    public PageResult getBlogByTag(PageRequest pageRequest, Long id) {
+        return PageUtil.getPageResult(pageRequest,getTagPageInfo(pageRequest,id));
+    }
+    private PageInfo<Blog> getTagPageInfo(PageRequest pageRequest,Long id) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        List<Blog> blogs = blogMapper.getBlogByTag(id);
+        return new PageInfo<Blog>(blogs);
+    }
+
+    private PageInfo<Blog> getTypePageInfo(PageRequest pageRequest,Blog blog) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        List<Blog> blogs = blogMapper.listShowBlog(blog);
+        return new PageInfo<Blog>(blogs);
+    }
+    @Override
+    @Transactional
     public int delBlog(Long id) {
         blogTagMapper.delBlogTagByBlogId(id);
         return blogMapper.delBlog(id);
@@ -108,6 +133,17 @@ public class BlogServiceImpl implements BlogService {
     public List<Blog> getResentRecommendBlogs(Integer size) {
         return blogMapper.getResentRecommendBlogs(size);
     }
+
+    @Override
+    public List<String> getArchiveYear() {
+        return blogMapper.getArchiveYear();
+    }
+
+    @Override
+    public List<Blog> getBlogByYear(String year) {
+        return blogMapper.getBlogByYear(year);
+    }
+
     private PageInfo<Blog> getIndexPageInfo(PageRequest pageRequest) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();

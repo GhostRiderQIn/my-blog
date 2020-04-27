@@ -69,8 +69,15 @@
             <result column="uavatar" property="avatar"/>
         </association>
     </resultMap>
+    <resultMap id="getTypeBlogs" type="Blog" extends="blog">
+        <association property="user" javaType="User">
+            <result column="uid" property="id"/>
+            <result column="unickname" property="nickname"/>
+            <result column="uavatar" property="avatar"/>
+        </association>
+    </resultMap>
 
-    <select id="listBlog" parameterType="Blog" resultMap="blog">
+    <select id="listBlog" parameterType="Blog" resultMap="getTypeBlogs">
         select
         b.id bid,
         b.title btitle,
@@ -90,11 +97,54 @@
         b.description bdescription,
         t.name tname,
         t.id tid,
-        u.id uid
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar
         from t_blog b,t_type t,t_user u
         <where>
             b.type_id = t.id
             and b.user_id = #{userId}
+            <if test="title != null">
+                <bind name="pattern" value="'%' + title + '%'" />
+                and b.title like #{pattern}
+            </if>
+            <if test="typeId != null">
+                and b.type_id = #{typeId}
+            </if>
+            <if test="recommend == true ">
+                and b.recommend = #{recommend}
+            </if>
+        </where>
+        order by bid
+    </select>
+
+    <select id="listShowBlog" parameterType="Blog" resultMap="getTypeBlogs">
+        select
+        b.id bid,
+        b.title btitle,
+        b.content bcontent,
+        b.firstPicture bfirstPicture,
+        b.flag bflag,
+        b.views bviews,
+        b.appreciation bappreciation,
+        b.shareStatement bshareStatement,
+        b.commentAble bcommentAble,
+        b.published bpublished,
+        b.recommend brecommend,
+        b.creatTime bcreatTime,
+        b.updateTime bupdateTime,
+        b.type_id btype_id,
+        b.user_id buser_id,
+        b.description bdescription,
+        t.name tname,
+        t.id tid,
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar
+        from t_blog b,t_type t,t_user u
+        <where>
+            b.type_id = t.id
+            and b.user_id = u.id
             <if test="title != null">
                 <bind name="pattern" value="'%' + title + '%'" />
                 and b.title like #{pattern}
@@ -141,7 +191,38 @@
            and tbtag.blog_id = b.id
            and ttag.id = tbtag.tag_id
     </select>
-
+    <select id="getBlogByTag" parameterType="java.lang.Long" resultMap="getIndexBlogs">
+        select
+        b.id bid,
+        b.title btitle,
+        b.content bcontent,
+        b.firstPicture bfirstPicture,
+        b.flag bflag,
+        b.views bviews,
+        b.appreciation bappreciation,
+        b.shareStatement bshareStatement,
+        b.commentAble bcommentAble,
+        b.published bpublished,
+        b.recommend brecommend,
+        b.creatTime bcreatTime,
+        b.updateTime bupdateTime,
+        b.type_id btype_id,
+        b.user_id buser_id,
+        b.description bdescription,
+        t.name tname,
+        t.id tid,
+        u.id uid,
+        u.nickname unickname,
+        u.avatar uavatar,
+        tbtag.tag_id tagid,
+        ttag.name tagname
+        from t_blog b,t_type t, t_blog_tag tbtag, t_tag ttag, t_user u
+        where ttag.id = #{id}
+           and b.user_id = u.id
+           and b.type_id = t.id
+           and tbtag.blog_id = b.id
+           and ttag.id = tbtag.tag_id
+    </select>
     <select id="getBlogs" resultMap="getIndexBlogs">
         select
         b.id bid,
@@ -215,5 +296,18 @@
            and u.id = b.user_id
            and (b.title like "%"#{p}"%"
            or b.content like "%"#{p}"%")
+    </select>
+    
+    <select id="getArchiveYear" resultType="java.lang.String">
+        select date_format(b.updateTime,'%Y') year
+        from t_blog b
+        group by year
+        order by year desc;
+    </select>
+
+    <select id="getBlogByYear" resultType="Blog" parameterType="java.lang.String">
+        select *
+        from t_blog b
+        where date_format(b.updateTime,'%Y') = #{year};
     </select>
 </mapper>

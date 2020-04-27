@@ -41,132 +41,26 @@
                         <div class="ui teal header">归档</div>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui orange header m-inline-block"> 20 </h2> 篇博客
+                        共 <h2 class="ui orange header m-inline-block" th:text="${sum}"> 20 </h2> 篇博客
                     </div>
                 </div>
             </div>
             <!--2020-->
-            <h2 class="ui center aligned header">2020</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
+            <th:block th:each="date:${dates}">
+                <h2 class="ui center aligned header" th:text="${date}">2020</h2>
+                <div class="ui fluid vertical menu">
 
+                    <a href="#" th:href="@{/blog/{id}(id=${blog.getId()})}" target="_blank" class="item" th:each="blog:${blogs.get(date)}">
                     <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
+                        <i class="mini teal circle icon m-padded-lr"></i>
+                        <span th:text="${blog.getTitle()}">标题</span>
+                        <div class="ui teal basic left pointing label m-padded-mini" th:text="${#dates.format(blog.getUpdateTime(),'MM月dd日')}">9月03</div>
                     </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
+                        <div class="ui orange basic label m-padded-mini" th:text="${blog.getFlag()}">原创</div>
+                    </a>
+                </div>
+            </th:block>
 
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-            </div>
-
-            <!--2019-->
-            <h2 class="ui center aligned header">2019</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-            </div>
-
-            <!--2018-->
-            <h2 class="ui center aligned header">2018</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-
-                    <span>
-                        <i class="mini teal circle icon m-padded-lr"></i>标题
-                        <div class="ui teal basic left pointing label m-padded-mini">9月03</div>
-                    </span>
-                    <div class="ui orange basic label m-padded-mini">原创</div>
-
-                </a>
-            </div>
         </div>
     </div>
 

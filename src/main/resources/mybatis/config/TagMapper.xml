@@ -42,6 +42,9 @@
         where bt.tag_id = t.id
         group by bt.tag_id
         order by nums desc
-        limit #{size}
+        <if test="size != -1">
+            limit #{size}
+        </if>
+
     </select>
 </mapper>

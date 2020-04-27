@@ -14,6 +14,10 @@ public interface BlogMapper {
 
     List<Blog> listBlog(Blog blog);
 
+    List<Blog> listShowBlog(Blog blog);
+
+    List<Blog> getBlogByTag(Long id);
+
     int delBlog(@Param("id") Long id);
 
     int updateBlog(@Param("id") Long id,@Param("blog") Blog blog);
@@ -23,4 +27,8 @@ public interface BlogMapper {
     List<Blog> getResentRecommendBlogs(Integer size);
 
     List<Blog> getBlogBySearchTitleOrContent(@Param("p") String p);
+
+    List<String> getArchiveYear();
+
+    List<Blog> getBlogByYear(String year);
 }
