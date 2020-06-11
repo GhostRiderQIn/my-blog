@@ -27,4 +27,5 @@ public class User {
     private Date updateTime;//更新时间
 
     private List<Blog> users = new ArrayList<>();
+
 }

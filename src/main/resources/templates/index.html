@@ -56,7 +56,7 @@
                             <div class="ui middle aligned mobile reversed stackable grid" >
                                 <div class="eleven wide column">
                                     <h3 class="ui header"><a class="m-black" href="#" th:text="${blog.getTitle()}" th:href="@{/blog/{id}(id=${blog.getId()})}" tabindex="_blank"></a></h3>
-                                    <p class="m-text-thin m-text-spaced m-text-lined" >段落内容段段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容</p>
+                                    <p class="m-text-thin m-text-spaced m-text-lined" th:text="${blog.getDescription()}">段落内容段段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内段落内容段落内容段落内容段落内容段落内落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容段落内容</p>
 <!--                                    th:text="${blog.getDescription()}"-->
                                     <div class="ui grid">
                                         <div class="eleven wide column">

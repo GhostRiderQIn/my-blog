@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.qin.exception.NotFoundException;
 import com.qin.mapper.BlogMapper;
 import com.qin.mapper.BlogTagMapper;
+import com.qin.mapper.CommentMapper;
 import com.qin.pojo.*;
 import com.qin.util.MarkdownUtil;
 import com.qin.util.PageUtil;
@@ -30,6 +31,8 @@ public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogTagMapper blogTagMapper;
 
+    @Autowired
+    private CommentMapper commentMapper;
     @Override
     @Transactional
     public Blog getBlogById(Long id) {
@@ -88,6 +91,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     @Transactional
     public int delBlog(Long id) {
+        commentMapper.delCommentByBlogId(id);
         blogTagMapper.delBlogTagByBlogId(id);
         return blogMapper.delBlog(id);
     }

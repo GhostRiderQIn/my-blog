@@ -250,6 +250,7 @@
         where
            b.type_id = t.id
            and u.id = b.user_id
+        order by b.updateTime desc
     </select>
     <delete id="delBlog" parameterType="java.lang.Long">
         delete from t_blog where id=#{id}

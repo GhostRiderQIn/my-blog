@@ -50,4 +50,8 @@
         order by c.creatTime
     </select>
 
+    <delete id="delCommentByBlogId">
+        delete from t_comment where blog_id = #{id}
+    </delete>
+
 </mapper>

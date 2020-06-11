@@ -16,4 +16,6 @@ public interface CommentMapper {
     List<Comment> getCommentsByParentId(@Param("blogId") Long blogId,@Param("parId") Long parId);
 
     int addComment(Comment comment);
+
+    int delCommentByBlogId(@Param("id") Long id);
 }

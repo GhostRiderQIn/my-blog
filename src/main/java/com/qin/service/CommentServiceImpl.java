@@ -41,4 +41,10 @@ public class CommentServiceImpl implements CommentService {
         comment.setCreatTime(new Date());
         return commentMapper.addComment(comment);
     }
+
+    @Override
+    public int delCommentByBlogId(Long id) {
+        commentMapper.delCommentByBlogId(id);
+        return 0;
+    }
 }

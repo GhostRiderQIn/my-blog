@@ -10,4 +10,6 @@ public interface CommentService {
 
     int addComment(Comment comment);
 
+    int delCommentByBlogId(Long id);
+
 }

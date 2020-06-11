@@ -31,4 +31,5 @@ public interface BlogMapper {
     List<String> getArchiveYear();
 
     List<Blog> getBlogByYear(String year);
+
 }
